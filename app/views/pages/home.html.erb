@@ -2,9 +2,11 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
 
+
 <h1>Vehicules Offers ?</h1>
 
 <%= @vehicules = Vehicule.all %>
+
 <%= current_user.first_name %>
 
 
@@ -14,6 +16,6 @@
 <% end %>
 
 
-<%= link_to 'Sign out', "/users/sign_out" %>
-<%= link_to 'Sign up', "/users/sign_up" %>
-<%= link_to 'Sign in', "/users/sign_up"  %>
+<%= link_to 'Sign out', destroy_user_session_path %>
+<%= link_to 'Sign up', new_user_registration_path %>
+<%= link_to 'Sign in', user_session_path  %>

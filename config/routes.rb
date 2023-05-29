@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   resources :vehicules do
     resources :reservations, only: [:new, :create, :edit, :update]
-    resources :categories, only: [:index]
+    resources :categories, only: [:index, :show]
   end
   resources :reservations, only: [:destroy]
+
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

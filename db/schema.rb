@@ -43,14 +43,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_29_133134) do
     t.string "name"
     t.integer "price"
     t.string "description"
-    t.bigint "reservation_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["reservation_id"], name: "index_vehicules_on_reservation_id"
     t.index ["user_id"], name: "index_vehicules_on_user_id"
   end
 
-  add_foreign_key "vehicules", "reservations"
   add_foreign_key "vehicules", "users"
 end

@@ -4,7 +4,6 @@ class CreateVehicules < ActiveRecord::Migration[7.0]
       t.string :name
       t.integer :price
       t.string :description
-      t.references :reservation, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
 
       t.timestamps

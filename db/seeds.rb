@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+# créer les categories = aérien, maritime, volant, all
+Category.create(name: "Aérien")
+Category.create(name: "Maritime")
+Category.create(name: "Terrestre")
+Category.create(name: "Multi-tâche")

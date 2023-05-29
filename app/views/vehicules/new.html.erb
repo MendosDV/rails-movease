@@ -1,6 +1,6 @@
 <h1>Ajoute un super vehicule</h1>
 
- <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+ <%= simple_form_for @vehicule do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -20,8 +20,8 @@
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "Your vehicules picture" } %>
-    <%= f.input :category, collection: Category.all
-                input_html: { autocomplete: "category"} %>
+    <%= f.input :category, collection: Category.all %>
+
   </div>
 
   <div class="form-actions">

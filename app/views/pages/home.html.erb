@@ -1,7 +1,19 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-<%= current_user.first_name %>
 
-<h1>Vehicules Offers</h1>
+
+<h1>Vehicules Offers ?</h1>
 
 <%= @vehicules = Vehicule.all %>
+<%= current_user.first_name %>
+
+
+<% @categories = Category.all %>
+<% @categories.each do |category| %>
+<%= category.name %>
+<% end %>
+
+
+<%= link_to 'Sign out', "/users/sign_out" %>
+<%= link_to 'Sign up', "/users/sign_up" %>
+<%= link_to 'Sign in', "/users/sign_up"  %>

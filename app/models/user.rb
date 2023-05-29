@@ -16,4 +16,5 @@ class User < ApplicationRecord
   validates :password, presence: true
   validates :phone_number, presence: true
 
+  has_one_attached :avatar
 end

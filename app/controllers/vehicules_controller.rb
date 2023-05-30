@@ -14,8 +14,11 @@ class VehiculesController < ApplicationController
 
   def create
     @vehicule = Vehicule.new(parmas_vehicule)
-    @vehicule.save
-    # redirect_to vehicules_path ?????
+    if @vehicule.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -23,12 +26,13 @@ class VehiculesController < ApplicationController
 
   def update
     @vehicule.update(parmas_vehicule)
-    # redirect_to vehicules_path ?????
+    # redirect_to root_path ?????
   end
 
   def destroy
     @vehicule.destroy(parmas_vehicule)
-    # redirect_to vehicules_path ?????
+
+    redirect_to root_path
   end
 
   private

@@ -1,4 +1,36 @@
 <%= render 'navbar' %>
+<%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+<div class="filters flex">
+                    <div class="textfilter">Filtres</div>
+                    <div class="filterlist flex">
+                         <div class="filter flex">
+                              <div class="iconfilter flex">
+                                   <i class="fa-solid fa-jet-fighter"></i>
+                              </div>
+                              <span>Aerien</span>
+                         </div>
+                         <div class="filter flex">
+                              <div class="iconfilter flex">
+                                   <i class="fa-solid fa-car-side"></i>
+                              </div>
+                              <span>Terrestre</span>
+                         </div>
+                         <div class="filter flex">
+                              <div class="iconfilter flex">
+                                   <i class="fa-solid fa-anchor"></i>
+                              </div>
+                              <span>Maritime</span>
+                         </div>
+                         <div class="filter flex">
+                              <div class="iconfilter flex">
+                                  <i class="fa-regular fa-hand-spock"></i>
+                              </div>
+                              <span>Multi-tache</span>
+                         </div>
+
+                    </div>
+
+               </div>
   <div class="custom-container">
 
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/3041347/pexels-photo-3041347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
@@ -12,5 +44,5 @@
   <%= render 'card' %>
 </div>
 
-<%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
 <%# <%= link_to 'Mon profil',  %>
+<%= render 'footer' %>

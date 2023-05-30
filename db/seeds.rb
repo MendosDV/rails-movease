@@ -19,7 +19,7 @@ require "open-uri"
 
 # file = URI.open("https://res.cloudinary.com/dmgpqeugv/image/upload/v1685376219/mario_wfyqjk.png")
 mario = User.create!(email: "mario@nintendo.com", first_name: "mario", last_name: "nintendo", phone_number: "0621456577", password: "marionintendo")
-mario.avatar.attach(io: File.open("photo_seed/mario.png"), filename: 'toto.svg')
+mario.avatar.attach(io: File.open("photo_seed/mario.png"), filename: 'mario.png')
 mario.save!
 # User.create!(email: "mario@nintendo.com", first_name: "mario", last_name: "nintendo", phone_number: "0621456577", avatar: )
 

@@ -1,2 +1,7 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<% if current_user.avatar.attached? %>
+  <%= cl_image_tag current_user.avatar.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+<%= render 'card' %>

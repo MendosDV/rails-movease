@@ -1,4 +1,4 @@
-<h1>Ajoute un super vehicule</h1>
+<h1>Ajoute ton super vehicule</h1>
 
  <%= simple_form_for @vehicule do |f| %>
   <%= f.error_notification %>
@@ -16,17 +16,13 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "Price" } %>
-    <%= f.input :picture, as: :file,
+    <%= f.input :pictures, as: :file,
                 required: false,
-                autofocus: true,
-                input_html: { autocomplete: "Your vehicules picture" } %>
-    <%= f.input :category, collection: Category.all %>
+                input_html: { autocomplete: "Your vehicules picture", multiple: true } %>
+    <%= f.input :category_id, collection: Category.pluck(:name, :id) %>
 
   </div>
-
   <div class="form-actions">
     <%= f.button :submit, "Save" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>

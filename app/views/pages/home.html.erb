@@ -5,14 +5,12 @@
 
 <h1>Vehicules Offers ?</h1>
 
-<%= @vehicules = Vehicule.all %>
+<% @vehicules = Vehicule.all %>
 
-<%# <%= current_user.first_name %>
-
-
-<% @categories = Category.all %>
-<% @categories.each do |category| %>
-<%= category.name %>
+<% @vehicules.each do |vehicule| %>
+  <div>
+    <%= link_to vehicule.name, vehicule_path(vehicule) %>
+  </div>
 <% end %>
 
 

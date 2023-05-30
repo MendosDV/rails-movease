@@ -1,9 +1,11 @@
 .navbar {
-  background-color: #f9f9f9;
+  background-color: #F4F4F4;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top:0;
 }
 
 .rocket {
@@ -22,6 +24,7 @@
   width: 70px;
   height: 100%;
 }
+
 
 
 .links a {

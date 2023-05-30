@@ -32,4 +32,3 @@ Category.create!(name: "Aérien")
 Category.create!(name: "Maritime")
 Category.create!(name: "Terrestre")
 Category.create!(name: "Multi-tâche")
-

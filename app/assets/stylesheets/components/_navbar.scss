@@ -41,3 +41,19 @@
 .links a:hover {
   color: #555;
 }
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-link {
+  cursor: pointer;
+}
+
+.menu-toggle:checked ~ .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+}

@@ -3,13 +3,15 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :vehicules do
-    resources :reservations, only: [:create]
+    resources :reservations, only: [:new, :create, :edit, :update]
   end
+  resources :categories, only: [:index, :show]
+  resources :reservations, only: [:destroy]
 
-  resources :reservations, only: [:update, :destroy]
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :reservations, only: [:create, :update]
 end

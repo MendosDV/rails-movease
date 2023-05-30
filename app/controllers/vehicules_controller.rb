@@ -13,28 +13,34 @@ class VehiculesController < ApplicationController
   end
 
   def create
-    @vehicule = Vehicule.new(parmas_vehicule)
-    @vehicule.save
-    # redirect_to vehicules_path ?????
+    @vehicule = Vehicule.new(params_vehicule)
+    @vehicule.user = current_user
+
+    if @vehicule.save
+      redirect_to root_path, notice: "Votre vehicule a bien été enregistré"
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-    @vehicule.update(parmas_vehicule)
-    # redirect_to vehicules_path ?????
+    @vehicule.update(params_vehicule)
+    # redirect_to root_path ?????
   end
 
   def destroy
-    @vehicule.destroy(parmas_vehicule)
-    # redirect_to vehicules_path ?????
+    @vehicule.destroy(params_vehicule)
+
+    redirect_to root_path
   end
 
   private
 
-  def parmas_vehicule
-    params.require(:vehicule).permit(:name, :description, :price)
+  def params_vehicule
+    params.require(:vehicule).permit(:name, :description, :price, :category_id, pictures: [])
   end
 
   def set_vehicule

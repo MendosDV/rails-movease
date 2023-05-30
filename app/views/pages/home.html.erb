@@ -1,3 +1,25 @@
-<div class="custom-container">
-  <%= render 'card' %>
-</div>
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+<% if user_signed_in? %>
+  <% if current_user.avatar.attached? %>
+    <%= cl_image_tag current_user.avatar.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+<% end %>
+
+
+
+
+<h1>Vehicules Offers ?</h1>
+
+<% @vehicules = Vehicule.all %>
+
+<% @vehicules.each do |vehicule| %>
+  <div>
+    <%= link_to vehicule.name, vehicule_path(vehicule) %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+<%= link_to 'Sign up', new_user_registration_path %>
+<%= link_to 'Sign in', user_session_path  %>

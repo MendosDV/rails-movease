@@ -1,0 +1,13 @@
+<h1>You choose : "this vehicule"</h1>
+
+<p>il est trop beau trop bien pas cher</p>
+
+
+
+<%= @vehicule.name %>
+<%= @vehicule.description %>
+<%= @vehicule.category.name %>
+<%= @vehicule.price %>
+<%= cl_image_tag @vehicule.pictures.first.key if @vehicule.pictures.first %>
+
+<%= console %>

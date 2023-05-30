@@ -1,34 +1,33 @@
 <%= render '/pages/navbar' %>
+<%= link_to 'page dacceuil', root_path %>
 <h1>
 <%= @vehicule.name %>
 </h1>
 <div class="container-card">
 
+        <div class="img-solo">
+          <%= cl_image_tag @vehicule.pictures.first.key, class:"img-first" if @vehicule.pictures.first %>
+        </div>
 
-    <div >
-      <%= cl_image_tag @vehicule.pictures.first.key, class:"img-first" if @vehicule.pictures.first %>
-    </div>
+        <div class="img-group">
+        <% @vehicule.pictures.drop(1).each do |picture| %>
+          <%= cl_image_tag picture.key, class:"img" %>
+        <% end %>
+        </div>
 
-    <div >
-    <% @vehicule.pictures.drop(1).each do |picture| %>
-      <%= cl_image_tag picture.key ,class:"img-first"%>
-    <% end %>
-    </div>
-
+</div>
+<div >
+<div class="container-description">
+    <h2> <%= @vehicule.description %> </h2>
+    <span><%= @vehicule.category.name %></span>
+      <div class="space-between">
+      <span><%= @vehicule.price %>$</span>
+      <%= cl_image_tag(@vehicule.user.avatar.key, class: "card-vehicule-user avatar-bordered") %>
+      </div>
+</div>
 
 </div>
 
 
-<h2>
-<%= @vehicule.description %>
-</h2>
-</div>
-<span><%= @vehicule.price %></span>
-<span><%= @vehicule.category.name %></span>
-<%= cl_image_tag(@vehicule.user.avatar.key, class: "card-vehicule-user avatar-bordered") %>
-<div>
 
-
-
-<%= link_to 'page dacceuil', root_path %>
  <%# <%= link_to 'Modifier le vehicule', root_path %>

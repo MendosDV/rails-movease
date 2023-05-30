@@ -6,6 +6,7 @@ class VehiculesController < ApplicationController
   end
 
   def show
+    
   end
 
   def new

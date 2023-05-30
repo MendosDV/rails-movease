@@ -4,11 +4,6 @@
   <h1>Pages#home</h1>
 
   <p>A NE PAS SUPPRIMER</p>
-  <% if user_signed_in? %>
-    <% if current_user.avatar.attached? %>
-      <%= cl_image_tag current_user.avatar.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-  <% end %>
 
   <%= render 'card' %>
   <%= render 'card' %>

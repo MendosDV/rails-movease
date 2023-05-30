@@ -1,0 +1,11 @@
+<h1>You choose : "this vehicule"</h1>
+
+<p>il est trop beau trop bien pas cher</p>
+
+
+<% @Vehicules.each do |vehicule| %>
+<%= vehicule.name %>
+<%= vehicule.description %>
+<%= vehicule.category %>
+<%= vehicule.price %>
+<% end %>

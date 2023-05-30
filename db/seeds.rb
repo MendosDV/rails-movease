@@ -23,8 +23,13 @@ mario.avatar.attach(io: File.open("photo_seed/mario.png"), filename: 'mario.png'
 mario.save!
 # User.create!(email: "mario@nintendo.com", first_name: "mario", last_name: "nintendo", phone_number: "0621456577", avatar: )
 
-# créer les categories = aérien, maritime, volant, all
-Category.create(name: "Aérien")
-Category.create(name: "Maritime")
-Category.create(name: "Terrestre")
-Category.create(name: "Multi-tâche")
+
+
+# créer les categories
+Category.destroy_all
+
+Category.create!(name: "Aérien")
+Category.create!(name: "Maritime")
+Category.create!(name: "Terrestre")
+Category.create!(name: "Multi-tâche")
+

@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   resources :vehicules do
     resources :reservations, only: [:new, :create, :edit, :update]
-    resources :categories, only: [:index, :show]
   end
+  resources :categories, only: [:index, :show]
   resources :reservations, only: [:destroy]
 
 

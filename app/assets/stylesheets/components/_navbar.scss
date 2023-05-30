@@ -1,12 +1,36 @@
-.navbar-lewagon {
+.navbar {
+  background-color: #f9f9f9;
+  padding: 10px;
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.rocket {
+  font-size: 48px;
+  color: #002147;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-mooveas {
+  color: #002147;
+  font-family: 'Cherry Bomb One', cursive;
+  font-size: 48px;
+}
+
+.avatar img {
+  border-radius: 50px;
+  width: 70px;
+  height: 100%;
+}
+
+ 
+
+.links a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.links a:hover {
+  color: #555;
 }

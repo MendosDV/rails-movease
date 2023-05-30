@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :reservations, only: [:destroy]
 
+  get '/dashboard', to: 'dashboards#show'
+
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

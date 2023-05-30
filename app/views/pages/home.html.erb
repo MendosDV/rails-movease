@@ -1,9 +1,20 @@
 <%= render 'navbar' %>
-<%= render 'footer' %>
 
-<div class="custom-container">
+  <div class="custom-container">
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/3041347/pexels-photo-3041347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
+    <div class="container">
+      <h1>Moveas vous <strong>fait voyager</strong> avec <strong>vos héros préférés </strong>!</h1>
+      <p>N'avez vous jamais rêvé de parcourir le monde à la vitesse de la lumière ?</p>
+      <a class="btn btn-flat" href="#">Se connecter</a>
+    </div>
+  </div>
+
   <%= render 'card' %>
 </div>
 
-<%# <%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %> 
+
+<%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+
 <%# <%= link_to 'Mon profil',  %>
+<%= render 'footer' %>

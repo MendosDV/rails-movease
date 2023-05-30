@@ -1,16 +1,20 @@
 
 .custom-container {
-  border: solid 5px red;
   width: 80%;
   margin: 16px auto;
+  background-color: #e2dfdf;
+  border-radius: 32px;
+  overflow: hidden;
 
   .custom-grid-index {
-    gap: 16px;
-    padding: 8px;
+    gap: 24px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     place-items: center;
     min-height: 54vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 

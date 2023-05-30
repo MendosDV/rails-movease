@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :reservations, only: [:destroy]
 
-
-
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

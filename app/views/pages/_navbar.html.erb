@@ -9,8 +9,11 @@
       <h3 class="navbar-mooveas">Movease</h3>
     </div>
   <div class="links">
-    <a href="#accueil">Sign in</a>
-    <a href="#services">Sign up</a>
+    <%= link_to 'Sign in', user_session_path  %>
+    <%= link_to 'Sign up', new_user_registration_path %>
     <%# <a class="avatar" href="#Avatar"><img src="https://media.istockphoto.com/id/1305665241/fr/vectoriel/avatar-anonyme-de-visage-neutre-de-genre-silhouette-de-t%C3%AAte-dincognito-illustration-de.jpg?s=170667a&w=0&k=20&c=cpN797FYv0kNz4L9y00eClPRNy5vn2SOQO-3DbsNefk=" alt="Avatar"></a></li> %>
   </div>
 </div>
+
+
+<%# <%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>

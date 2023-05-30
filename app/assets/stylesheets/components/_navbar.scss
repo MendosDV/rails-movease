@@ -1,5 +1,6 @@
 .navbar {
-  background-color: #F4F4F4;
+  background-color: #FFF;
+  border: solid 1px;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -38,4 +39,20 @@
 
 .links a:hover {
   color: #555;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-link {
+  cursor: pointer;
+}
+
+.menu-toggle:checked ~ .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
 }

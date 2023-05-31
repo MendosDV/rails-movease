@@ -44,7 +44,7 @@ class VehiculesController < ApplicationController
   private
 
   def params_vehicule
-    params.require(:vehicule).permit(:name, :description, :price, :category_id, pictures: [])
+    params.require(:vehicule).permit(:name, :description, :price, :category_id, :address, pictures: [])
   end
 
   def set_vehicule

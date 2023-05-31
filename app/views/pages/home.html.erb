@@ -9,39 +9,46 @@
     </div>
   </div>
 <div class="filters flex">
-                    <div class="textfilter">Filtres</div>
-                    <div class="filterlist flex">
-                         <div class="filter flex">
-                              <div class="iconfilter flex">
-                                   <i class="fa-solid fa-jet-fighter"></i>
-                              </div>
-                              <span>Aerien</span>
-                         </div>
-                         <div class="filter flex">
-                              <div class="iconfilter flex">
-                                   <i class="fa-solid fa-car-side"></i>
-                              </div>
-                              <span>Terrestre</span>
-                         </div>
-                         <div class="filter flex">
-                              <div class="iconfilter flex">
-                                   <i class="fa-solid fa-anchor"></i>
-                              </div>
-                              <span>Maritime</span>
-                         </div>
-                         <div class="filter flex">
-                              <div class="iconfilter flex">
-                                  <i class="fa-regular fa-hand-spock"></i>
-                              </div>
-                              <span>Multi-tache</span>
-                         </div>
+  <div class="textfilter">Filtres</div>
+  <div class="filterlist flex">
+    <div class="filter flex">
+        <div class="iconfilter flex">
+              <i class="fa-solid fa-jet-fighter"></i>
+        </div>
+        <span>Aerien</span>
+    </div>
+    <div class="filter flex">
+        <div class="iconfilter flex">
+              <i class="fa-solid fa-car-side"></i>
+        </div>
+        <span>Terrestre</span>
+    </div>
+    <div class="filter flex">
+        <div class="iconfilter flex">
+              <i class="fa-solid fa-anchor"></i>
+        </div>
+        <span>Maritime</span>
+    </div>
+    <div class="filter flex">
+        <div class="iconfilter flex">
+            <i class="fa-regular fa-hand-spock"></i>
+        </div>
+        <span>Multi-tache</span>
+    </div>
 
-                    </div>
+  </div>
 
-               </div>
+</div>
 
 </div>
   <div class="custom-container">
+
+    <div class="map"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
   <%= render 'card' %>
   </div>
 

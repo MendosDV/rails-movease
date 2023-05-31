@@ -4,4 +4,7 @@ class Vehicule < ApplicationRecord
 
   has_many :reservations
   has_many_attached :pictures
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

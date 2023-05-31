@@ -7,7 +7,13 @@ class VehiculesController < ApplicationController
   end
 
   def show
-
+    @reservations       = @vehicule.reservations
+    @reservations_dates = @reservations.map do |reservation|
+      {
+        from: reservation.start_date,
+        to:   reservation.end_date
+      }
+    end
   end
 
   def new

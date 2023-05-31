@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_31_085959) do
+
+ActiveRecord::Schema[7.0].define(version: 2023_05_31_102116) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,7 +56,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_085959) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "vehicule_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
+    t.index ["vehicule_id"], name: "index_reservations_on_vehicule_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -90,6 +94,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_085959) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "reservations", "vehicules"
   add_foreign_key "vehicules", "categories"
   add_foreign_key "vehicules", "users"
 end

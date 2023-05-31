@@ -37,7 +37,7 @@ class VehiculesController < ApplicationController
     if @vehicule.destroy
       redirect_to dashboard_path, notice: "Votre vehicule a bien été supprimé"
     else
-      render "user_profile", notice: "Votre vehicule n'a pas pu etre supprimé"
+      render "user_profile", notice: "Votre vehicule n'a pas pu être supprimé"
     end
   end
 

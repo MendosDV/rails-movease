@@ -1,48 +1,53 @@
 <%= render 'navbar' %>
 
 <%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
-
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallpapercave.com/wp/ZaHQ4Jf.jpg);">
-    <div class="container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallpapercave.com/wp/ZaHQ4Jf.jpg);">    <div class="container">
       <h1>Moveas vous <strong>fait voyager</strong> avec <strong>vos héros préférés </strong>!</h1>
       <p>N'avez vous jamais rêvé de parcourir le monde à la vitesse de la lumière ?</p>
       <%= link_to 'Se connecter', user_session_path, class: "btn btn-flat" %>
     </div>
   </div>
 <div class="filters flex">
-                    <div class="textfilter">Filtres</div>
-                    <div class="filterlist flex">
-                         <div class="filter flex">
-                              <div class="iconfilter flex">
-                                   <i class="fa-solid fa-jet-fighter"></i>
-                              </div>
-                              <span>Aerien</span>
-                         </div>
-                         <div class="filter flex">
-                              <div class="iconfilter flex">
-                                   <i class="fa-solid fa-car-side"></i>
-                              </div>
-                              <span>Terrestre</span>
-                         </div>
-                         <div class="filter flex">
-                              <div class="iconfilter flex">
-                                   <i class="fa-solid fa-anchor"></i>
-                              </div>
-                              <span>Maritime</span>
-                         </div>
-                         <div class="filter flex">
-                              <div class="iconfilter flex">
-                                  <i class="fa-regular fa-hand-spock"></i>
-                              </div>
-                              <span>Multi-tache</span>
-                         </div>
+  <div class="textfilter">Filtres</div>
+  <div class="filterlist flex">
+    <div class="filter flex">
+        <div class="iconfilter flex">
+              <i class="fa-solid fa-jet-fighter"></i>
+        </div>
+        <span>Aerien</span>
+    </div>
+    <div class="filter flex">
+        <div class="iconfilter flex">
+              <i class="fa-solid fa-car-side"></i>
+        </div>
+        <span>Terrestre</span>
+    </div>
+    <div class="filter flex">
+        <div class="iconfilter flex">
+              <i class="fa-solid fa-anchor"></i>
+        </div>
+        <span>Maritime</span>
+    </div>
+    <div class="filter flex">
+        <div class="iconfilter flex">
+            <i class="fa-regular fa-hand-spock"></i>
+        </div>
+        <span>Multi-tache</span>
+    </div>
 
-                    </div>
+  </div>
 
-               </div>
+</div>
 
 </div>
   <div class="custom-container">
+
+    <div class="map"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
   <%= render 'card' %>
   </div>
 

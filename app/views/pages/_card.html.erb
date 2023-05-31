@@ -7,6 +7,7 @@
         <div>
           <h2><%= vehicule.name %></h2>
           <p><%= vehicule.description %></p>
+          <p><%= "Réservé" unless vehicule.reservations.empty? %></p>
         </div>
         <h2 class="card-vehicule-pricing"><%= vehicule.price %>€</h2>
         <%= cl_image_tag(vehicule.user.avatar.key, class: "card-vehicule-user avatar-bordered") if vehicule.user.avatar.attached? %>

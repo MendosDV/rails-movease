@@ -2,8 +2,8 @@ class Vehicule < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
-  has_many :reservations
-  has_many_attached :pictures
+  has_many :reservations, dependent: :destroy
+  has_many_attached :pictures, dependent: :destroy
 
   validates :name, :description, :price, :category_id, :address, presence: true
 

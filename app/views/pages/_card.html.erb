@@ -5,12 +5,16 @@
       <%= cl_image_tag(vehicule.pictures.first.key) %>
       <div class="card-vehicule-infos">
         <div>
-          <h2><%= vehicule.name %></h2>
-          <p><%= vehicule.description %></p>
+          <h2 class="size-name"><%= vehicule.name %></h2>
         </div>
-        <h2 class="card-vehicule-pricing"><%= vehicule.price %>€</h2>
         <%= cl_image_tag(vehicule.user.avatar.key, class: "card-vehicule-user avatar-bordered") if vehicule.user.avatar.attached? %>
       </div>
+        <div class="card-description">
+          <p><%= vehicule.description.truncate(85) %></p>
+        </div>
+        <div class="price-category">
+          <h3><strong><%= vehicule.price %>€/ jour    -    <%= vehicule.category.name %></h3></strong>
+        </div>
     </div>
     <% end %>
   <% end %>

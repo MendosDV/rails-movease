@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  validates :avatar, attached: true
+ 
   validates :first_name, :last_name, :email, :password, :phone_number, presence: true
   validates :email, uniqueness: true
 

@@ -1,5 +1,6 @@
 class VehiculesController < ApplicationController
   before_action :set_vehicule, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @vehicules = Vehicule.all
@@ -29,13 +30,15 @@ class VehiculesController < ApplicationController
 
   def update
     @vehicule.update(params_vehicule)
-    # redirect_to root_path ?????
+    redirect_to dashboard_path, notice: "Votre vehicule a bien été modifié"
   end
 
   def destroy
-    @vehicule.destroy(params_vehicule)
-
-    redirect_to root_path
+    if @vehicule.destroy
+      redirect_to dashboard_path, notice: "Votre vehicule a bien été supprimé"
+    else
+      render "user_profile", notice: "Votre vehicule n'a pas pu être supprimé"
+    end
   end
 
   private

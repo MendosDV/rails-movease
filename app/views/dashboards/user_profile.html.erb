@@ -1,0 +1,41 @@
+
+<h1> Bienvenue <%= current_user.first_name%></h1>
+
+
+<div>
+  <h2>Mes informations personnelles</h2>
+    <%= link_to 'Modifier mon profil', edit_user_registration_path %> |
+    <%= link_to 'Supprimer mon compte', user_registration_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+</div>
+
+**********************************************************************
+
+<div>
+  <h2>Mes véhicules</h2>
+    <ul>
+      <% @my_vehicules = current_user.vehicules %>
+      <% @my_vehicules.each do |vehicule| %>
+      <li><%= vehicule.name %></li>
+    </ul>
+      <%= link_to 'Modifier', edit_vehicule_path(vehicule) %> |
+      <%= link_to 'Supprimer', vehicule_path(vehicule), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+      <% end %>
+</div>
+
+***********************************************************************
+
+<div>
+  <h2>Mes réservations en cours</h2>
+    <ul>
+
+    </ul>
+</div>
+
+***********************************************************************
+
+<div>
+  <h2>Mon historique de réservations </h2>
+    <ul>
+
+    </ul>
+</div>

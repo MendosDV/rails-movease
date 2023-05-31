@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :reservations, only: [:new, :create, :edit, :update]
   end
   resources :categories, only: [:index, :show]
-  resources :reservations, only: [:destroy]
+  resources :reservations, only: [:destroy, :show]
   get '/dashboard', to: 'dashboards#show'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

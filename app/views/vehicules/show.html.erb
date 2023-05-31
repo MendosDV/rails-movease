@@ -1,5 +1,7 @@
 <%= render '/pages/navbar' %>
 <%= link_to 'page dacceuil', root_path %>
+<%= link_to 'reservation', new_vehicule_reservation_path(@vehicule) %>
+</div>
 <h1>
 <%= @vehicule.name %>
 </h1>
@@ -16,6 +18,7 @@
         </div>
 
 </div>
+
 <div >
 <div class="container-description">
     <h2> <%= @vehicule.description %> </h2>
@@ -26,8 +29,8 @@
       </div>
 </div>
 
+<div>
+
 </div>
-
-
 
  <%# <%= link_to 'Modifier le vehicule', root_path %>

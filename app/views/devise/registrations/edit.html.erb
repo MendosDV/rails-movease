@@ -23,9 +23,9 @@
                 autofocus: true,
                 input_html: { autocomplete: "phone_number" } %>
     <%= f.input :avatar, as: :file,
-                required: false,
+                required: true,
                 autofocus: true,
-                input_html: { autocomplete: "Your profils picture" } %>
+                input_html: { autocomplete: "pictures" } %>
     <%= f.input :current_password,
                 hint: "we need your current password to confirm your changes",
                 required: true,

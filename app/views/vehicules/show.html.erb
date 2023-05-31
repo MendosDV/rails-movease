@@ -1,10 +1,16 @@
 <%= render '/pages/navbar' %>
+<div class="container">
+</div>
+
+</div>
+<div class="container-filter">
+<div class="btn btn-primary">
 <%= link_to 'page dacceuil', root_path %>
-<%= link_to 'reservation', new_vehicule_reservation_path(@vehicule) %>
 </div>
 <h1>
 <%= @vehicule.name %>
 </h1>
+</div>
 <div class="container-card">
 
         <div class="img-solo">
@@ -26,6 +32,14 @@
       <div class="space-between">
       <span><%= @vehicule.price %>$</span>
       <%= cl_image_tag(@vehicule.user.avatar.key, class: "card-vehicule-user avatar-bordered") %>
+      </div>
+      <% if @reservations == []%>
+      <div class="btn btn-primary">
+        <%# if @reservation.status == false || @reservation.status.nil? %>
+        <%= link_to 'reservation', new_vehicule_reservation_path(@vehicule) %>
+        <% else %>
+        <%= "reservé" %>
+        <% end %>
       </div>
 </div>
 

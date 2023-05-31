@@ -10,8 +10,8 @@ class VehiculesController < ApplicationController
     @reservations       = @vehicule.reservations
     @reservations_dates = @reservations.map do |reservation|
       {
-        from: reservation.start_date,
-        to:   reservation.end_date
+        from: reservation.date,
+        to:   reservation.date
       }
     end
   end

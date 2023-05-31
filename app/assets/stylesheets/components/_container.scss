@@ -17,6 +17,13 @@
     justify-content: center;
   }
 }
+.container-filter {
+  width: 80%;
+  margin: 16px auto;
+  background-color: white;
+  border-radius: 32px;
+  overflow: hidden;
+}
 
 @media (max-width: 960px) {
   /* Pour un écran < 960px, cette classe CSS s'applique */

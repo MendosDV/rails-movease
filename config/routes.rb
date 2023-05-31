@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   end
   resources :categories, only: [:index, :show]
   resources :reservations, only: [:destroy]
-  get '/dashboard', to: 'dashboards#show'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get '/dashboard', to: 'dashboards#user_profile'
 
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
   # root "articles#index"
 end

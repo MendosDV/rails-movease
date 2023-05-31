@@ -1,6 +1,8 @@
 class DashboardsController < ApplicationController
 
-def show
+def user_profile
+  @my_vehicules = current_user.vehicules
 end
+
 
 end

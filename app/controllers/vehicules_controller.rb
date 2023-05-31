@@ -34,9 +34,11 @@ class VehiculesController < ApplicationController
   end
 
   def destroy
-    @vehicule.destroy(params_vehicule)
-
-    redirect_to dashboard_path, notice: "Votre vehicule a bien été supprimé"
+    if @vehicule.destroy
+      redirect_to dashboard_path, notice: "Votre vehicule a bien été supprimé"
+    else
+      render "user_profile", notice: "Votre vehicule n'a pas pu etre supprimé"
+    end
   end
 
   private

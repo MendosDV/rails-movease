@@ -15,7 +15,7 @@
 }
 
 .card-vehicule h2 {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
 }
@@ -38,5 +38,36 @@
   position: absolute;
   right: 16px;
   top: -20px;
-  width: 40px;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+
+.card-description {
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+
+    p{
+      color: rgb(66, 65, 65);
+      font-size: 14px;
+    }
+
+
+    h2{
+      font-size: 18px;
+    }
+}
+
+.price-category {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h3{
+    font-size: 16px;
+  }
 }

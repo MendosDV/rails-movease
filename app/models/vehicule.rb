@@ -5,7 +5,6 @@ class Vehicule < ApplicationRecord
   has_many :reservations
   has_many_attached :pictures
 
-  validates :pictures, attached: true
   validates :name, :description, :price, :category_id, :address, presence: true
 
 

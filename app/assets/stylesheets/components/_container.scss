@@ -2,7 +2,8 @@
 .custom-container {
   width: 80%;
   margin: 16px auto;
-  background-color: #e2dfdf;
+  // background-color: #e2dfdf;
+  background-color: white;
   border-radius: 32px;
   overflow: hidden;
   // border: solid 3px red;
@@ -14,9 +15,13 @@
     grid-template-columns: repeat(4, 1fr);
     place-items: center;
     min-height: 54vh;
+<<<<<<< HEAD
     justify-content: space-between;
     border: solid 3px rgb(0, 255, 68);
 
+=======
+    // border: solid 3px rgb(0, 255, 68);
+>>>>>>> 1d8714e1a28559ead7658cd7da94e567af6493ac
   }
 }
 .container-filter {
@@ -27,7 +32,7 @@
   overflow: hidden;
 }
 
-@media (max-width: 1227px) {
+@media (max-width: 1800px) {
   /* Pour un écran < 960px, cette classe CSS s'applique */
   .custom-container {
     width: 85%;
@@ -38,14 +43,17 @@
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1160px) {
   /* Pour un écran < 960px, cette classe CSS s'applique */
   .custom-container {
+    width: 85%;
+
     .custom-grid-index {
-      justify-content: center;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }
+
 
 @media (max-width: 720px) {
   /* Pour un écran < 720px, cette classe CSS s'applique */
@@ -53,7 +61,7 @@
     width: 90%;
 
     .custom-grid-index {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 

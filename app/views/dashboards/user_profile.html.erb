@@ -9,17 +9,37 @@
 
 **********************************************************************
 
-<div>
+
   <h2>Mes véhicules</h2>
-    <ul>
+
+    <div class="custom-grid-index">
       <% @my_vehicules = current_user.vehicules %>
-      <% @my_vehicules.each do |vehicule| %>
-      <li><%= vehicule.name %></li>
-    </ul>
-      <%= link_to 'Modifier', edit_vehicule_path(vehicule) %> |
-      <%= link_to 'Supprimer', vehicule_path(vehicule), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
-      <% end %>
-</div>
+        <% @my_vehicules.each do |vehicule| %>
+          <%= link_to vehicule_path(vehicule) do %>
+            <div class="card-vehicule">
+              <%= cl_image_tag(vehicule.pictures.first.key) if vehicule.pictures.attached? %>
+              <div class="card-vehicule-infos">
+                <div>
+                  <h2 class="size-name"><%= vehicule.name %></h2>
+                </div>
+                  <%= cl_image_tag(vehicule.user.avatar.key, class: "card-vehicule-user avatar-bordered") if vehicule.user.avatar.attached? %>
+              </div>
+                <div class="card-description">
+                  <p><%= vehicule.description.truncate(85) %></p>
+                </div>
+                <div class="price-category">
+                  <h3><strong><%= vehicule.price %>€/ jour    -    <%= vehicule.category.name %></h3></strong>
+                </div>
+                <div class="reservate">
+                  <%= "Réservé" unless vehicule.reservations.empty? %>
+                </div>
+            </div>
+          <% end %>
+    </div>
+          <%= link_to 'Modifier', edit_vehicule_path(vehicule) %> |
+          <%= link_to 'Supprimer', vehicule_path(vehicule), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+        <% end %>
+
 
 
 ***********************************************************************

@@ -2,12 +2,20 @@
   <% vehicules.each do |vehicule| %>
     <%= link_to vehicule_path(vehicule) do %>
       <div class="card-vehicule">
-        <%= cl_image_tag(vehicule.pictures.first.key) if vehicule.pictures.attached? %>
+        <% if vehicule.pictures.attached? %>
+          <%= cl_image_tag(vehicule.pictures.first.key) %>
+        <% else %>
+          <%= image_tag 'no-image.jpg' %>
+        <% end %>
         <div class="card-vehicule-infos">
           <div>
             <h2 class="size-name"><%= vehicule.name %></h2>
           </div>
-          <%= cl_image_tag(vehicule.user.avatar.key, class: "card-vehicule-user avatar-bordered") if vehicule.user.avatar.attached? %>
+          <% if vehicule.user.avatar.attached? %>
+          <%= cl_image_tag(vehicule.user.avatar.key, class: "card-vehicule-user avatar-bordered") %>
+        <% else %>
+          <%= image_tag 'no-image.jpg', class: "card-vehicule-user avatar-bordered" %>
+        <% end %>
         </div>
           <div class="card-description">
             <p><%= vehicule.description.truncate(85) %></p>

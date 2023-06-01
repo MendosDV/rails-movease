@@ -1,0 +1,27 @@
+.gallery {
+  --s: 150px; /* contrôle la taille */
+  --g: 10px; /* contrôle les gouttières (gap) */
+  --f: 1; /* contrôle le facteur d'échelle */
+
+  display: grid;
+  gap: var(--g);
+  width: calc(
+    3 * var(--s) + 2 * var(--g)
+  ); /* 3 fois la taille plus 2 fois la gouttière */
+  aspect-ratio: 1;
+  grid-template-columns: repeat(2, auto);
+}
+
+.gallery > img {
+  width: 0;
+  height: 0;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  transition: 0.6s;
+}
+
+.gallery img:hover {
+  width: calc(var(--s) * var(--f));
+  height: calc(var(--s) * var(--f));
+}

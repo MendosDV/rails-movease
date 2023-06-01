@@ -12,15 +12,18 @@ class ReservationsController < ApplicationController
   end
 
   def show
+    @vehicule = Vehicule.find(params[:vehicule_id])
 
   end
 
   def create
+    @vehicule = Vehicule.find(params[:vehicule_id])
     @reservation = Reservation.new(params_reservation)
     @reservation.user = current_user
     @reservation.vehicule = Vehicule.find(params[:vehicule_id])
     if @reservation.save
-      redirect_to root_path, notice: "Votre vehicule a bien été enregistré"
+
+      redirect_to vehicule_reservation_path(id: @reservation.id), notice: "Votre vehicule a bien été enregistré"
     else
       render :new
     end
@@ -48,6 +51,6 @@ class ReservationsController < ApplicationController
   end
 
   def set_reservation
-    @reservation = reservation.find(params[:id])
+    @reservation = Reservation.find(params[:id])
   end
 end

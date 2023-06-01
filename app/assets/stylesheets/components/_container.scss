@@ -15,7 +15,13 @@
     grid-template-columns: repeat(4, 1fr);
     place-items: center;
     min-height: 54vh;
+<<<<<<< HEAD
+    justify-content: space-between;
+    border: solid 3px rgb(0, 255, 68);
+
+=======
     // border: solid 3px rgb(0, 255, 68);
+>>>>>>> 1d8714e1a28559ead7658cd7da94e567af6493ac
   }
 }
 .container-filter {
@@ -81,4 +87,14 @@
       }
     }
   }
+}
+
+.custom-container-log {
+  width: 60%;
+  margin: 16px auto;
+  background-color: #e2dfdf;
+  border-radius: 32px;
+  overflow: hidden;
+  // border: solid 3px red;
+  padding: 32px;
 }

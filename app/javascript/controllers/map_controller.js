@@ -25,6 +25,9 @@ export default class extends Controller {
       trackUserLocation: true,
       showUserHeading: true
     }))
+
+    this.map.addControl(new mapboxgl.NavigationControl());
+    // this.map.scrollZoom.disable(); Permet de désactiver le scroll sur la map
   }
 
   #addMarkersToMap() {

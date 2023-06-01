@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :vehicules do
-    resources :reservations, only: [:new, :create, :edit, :update, :show]
-    
+    resources :reservations, only: [:new, :create]
+
   end
   resources :categories, only: [:index, :show]
 
-  resources :reservations, only: [:destroy, :show]
+  resources :reservations, only: [:destroy, :show, :update, :edit]
 
   get '/dashboard', to: 'dashboards#user_profile'
 

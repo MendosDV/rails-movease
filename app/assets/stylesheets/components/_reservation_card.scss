@@ -1,0 +1,85 @@
+// .reservation-card {
+//   max-width: 300px;
+//   border-radius: 10px;
+//   margin: 0 auto;
+// }
+
+// .card {
+//   border-radius: 10px;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+// }
+
+// .card-body {
+//   padding: 16px;
+// }
+
+// body.page-dashboard {
+//   background-image: url('https://previews.123rf.com/images/canbedone/canbedone1509/canbedone150900052/45873151-superhero-avec-le-pouce-jusqu-%C3%A0-isol%C3%A9.jpg');
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+  font-size: 14px;
+  border-bottom: 1px solid #c0c1c2;
+  padding: 15px 15px;
+}
+
+ul li:first-child {
+  border-top: 1px solid #c0c1c2;
+}
+
+.card-holder {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card-holder .card {
+  max-width: 350px;
+  border: 1px solid #4285F4;
+  border-radius: 3px;
+  -webkit-transition: -webkit-box-shadow 0.7s ease-in;
+  transition: -webkit-box-shadow 0.7s ease-in;
+  transition: box-shadow 0.7s ease-in;
+  transition: box-shadow 0.7s ease-in, -webkit-box-shadow 0.7s ease-in;
+  margin: 30px 15px;
+}
+
+.card-holder .card h5 {
+  padding: 20px 15px;
+}
+
+.card-holder .card p {
+  padding: 0 15px;
+  margin: 0 0 20px;
+}
+
+.card-holder .card a {
+  padding: 10px 30px;
+  display: inline-block;
+  background-color: #002147;
+  margin: 0 15px 20px;
+  border: 1px solid #002147;
+  border-radius: 25px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-shadow: 2px 1px #222222;
+  -webkit-transition: background-color 0.7s ease;
+  transition: background-color 0.7s ease;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.card-holder .card a:hover {
+  background-color: #002147;
+}
+
+.card-holder .card:hover {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

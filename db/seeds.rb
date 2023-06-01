@@ -15,6 +15,7 @@ Category.create!(name: "Multi-tâche")
 # créer des users
 # seeding images cloudinary
 User.destroy_all
+User.destroy_all
 
 file_fred = URI.open("https://res.cloudinary.com/dmgpqeugv/image/upload/v1685389484/development/owner/fred-pierrafeu_ijszpl.jpg")
 pierrafeu = User.new(
@@ -67,6 +68,7 @@ voiture_pierrafeu = Vehicule.new(
   description: "Besoin d'un moyen de transport préhistorique ? Une envie de se muscler les cuisses tout en s’amusant ? Louez notre incroyable voiture à pédales et remontez dans le temps. Avec ce véhicule écologique, vous pourrez explorer le monde des dinosaures, rencontrer des voisins des cavernes et vivre des aventures paléolithiques. Soyez prêt à pousser vos jambes, à fredonner 'Yabba Dabba Doo !' et à construire des maisons en pierre. Attention aux T-Rex affamés !",
   price: '100',
   user_id: pierrafeu.id,
+  category: Category.find_by(name: 'Terrestre'),
   category: Category.find_by(name: 'Terrestre'),
   address: 'Souppes-sur-Loing, France',
   latitude: 2.733,

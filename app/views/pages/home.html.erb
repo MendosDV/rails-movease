@@ -3,9 +3,14 @@
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallpapercave.com/wp/ZaHQ4Jf.jpg);">    <div class="container">
       <h1>Moveas vous <strong>fait voyager</strong> comme <strong>vos héros préférés </strong>!</h1>
       <p>N'avez vous jamais rêvé de parcourir le monde à la vitesse de la lumière ?</p>
-      <%= link_to 'Se connecter', user_session_path, class: "btn btn-flat" %>
+       <% if user_signed_in? %>
+          <%= link_to 'Publier sur Movease', new_vehicule_path, class: "btn btn-flat" %>
+          <% else %>
+        <%= link_to 'Se connecter', user_session_path, class: "btn btn-flat" %>
+          <% end %>
     </div>
   </div>
+
   <div class="container-filter">
 <div class="filters flex">
   <div class="textfilter">Filtres</div>
@@ -49,8 +54,9 @@
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 
-  <%= render 'card' %>
+    <%= render 'search' %>
   </div>
+
 
 
 <%# <%= link_to 'Mon profil',  %>

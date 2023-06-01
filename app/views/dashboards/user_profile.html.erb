@@ -36,18 +36,47 @@
   </div>
 </div>
 
+<body class="page-dashboard">
+  <div class="custom-container">
+    <div class="text-dashboard">
+      <h1> Bienvenue <%= current_user.first_name%></h1>
 
 
-<h1> Bienvenue <%= current_user.first_name%></h1>
+      <div>
+        <h2>Mes informations personnelles</h2>
+          <%= link_to 'Modifier mon profil', edit_user_registration_path %> |
+          <%= link_to 'Supprimer mon compte', user_registration_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+      </div>
+
+      **********************************************************************
+
+      <div>
+        <h2>Mes véhicules</h2>
+          <ul>
+            <% @my_vehicules = current_user.vehicules %>
+            <% @my_vehicules.each do |vehicule| %>
+            <li><%= link_to vehicule.name, vehicule_path(vehicule) %></li>
+
+          </ul>
+            <%= link_to 'Modifier', edit_vehicule_path(vehicule) %> |
+            <%= link_to 'Supprimer', vehicule_path(vehicule), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+            <% end %>
+      </div>
 
 
-<div>
-  <h2>Mes informations personnelles</h2>
-    <%= link_to 'Modifier mon profil', edit_user_registration_path %> |
-    <%= link_to 'Supprimer mon compte', user_registration_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+      ***********************************************************************
+
+      <div>
+     <h2>Mes réservations en cours</h2>
+  <ul>
+    <% @my_reservations = current_user.reservations %>
+    <% @my_reservations.each do |reservation| %>
+      <li><%= link_to reservation.vehicule.name, vehicule_reservation_path(reservation.vehicule, reservation) %></li>
+    <% end %>
+  </ul>
 </div>
 
-**********************************************************************
+      ***********************************************************************
 
 
   <h2>Mes véhicules</h2>

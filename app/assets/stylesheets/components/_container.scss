@@ -15,7 +15,7 @@
     grid-template-columns: repeat(4, 1fr);
     place-items: center;
     min-height: 54vh;
-    // border: solid 3px rgb(0, 255, 68);
+    justify-content: space-between;
   }
 }
 .container-filter {
@@ -81,4 +81,23 @@
       }
     }
   }
+}
+
+.page-dashboard {
+  background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700513114.jpg');
+
+}
+
+.page-dashboard2{
+  background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700513114.jpg');
+}
+.custom-container-log {
+  width: 60%;
+  margin: 16px auto;
+  background-color: #e2dfdf;
+  border-radius: 32px;
+  overflow: hidden;
+  // border: solid 3px red;
+  padding: 32px;
+
 }

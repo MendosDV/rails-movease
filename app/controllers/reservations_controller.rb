@@ -12,8 +12,7 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    
-
+    @vehicule = Vehicule.find(params[:vehicule_id])
   end
 
   def create
@@ -26,6 +25,7 @@ class ReservationsController < ApplicationController
     else
       render :new
     end
+
 
   end
 

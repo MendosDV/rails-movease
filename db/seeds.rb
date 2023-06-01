@@ -104,9 +104,9 @@ voiture_k2000 = Vehicule.new(
   price: '359',
   user_id: k2000.id,
   category: Category.find_by(name: 'Terrestre'),
-  address: 'Dallas, Texas, USA',
-  latitude:	32.7791,
-  longitude: -96.8088
+  address: 'Perpignan, France',
+  latitude:	42.6886,
+  longitude: 2.89483
 )
 
 image_files_k2000.each do |file|
@@ -157,9 +157,9 @@ voiture_superman = Vehicule.new(
   price: '999',
   user_id: superman.id,
   category: Category.find_by(name: 'Multi-tâches'),
-  address: 'Metropolis, illinois, USA',
-  latitude:		37.1511,
-  longitude: 	-88.7319
+  address: 'Paris, France',
+  latitude:		48.8566,
+  longitude: 	2.3522
 )
 
 image_files_superman.each do |file|

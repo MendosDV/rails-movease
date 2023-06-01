@@ -12,7 +12,7 @@
       <%= cl_image_tag @vehicule.pictures.first.key, class:"img-first" if @vehicule.pictures.first %>
     </div>
 
-    <div class="img-group">
+    <div class="img-group gallery">
       <% @vehicule.pictures.drop(1).each do |picture| %>
         <%= cl_image_tag picture.key, class:"img" %>
       <% end %>
@@ -22,7 +22,7 @@
 
   <div >
     <div class="container-description">
-      <h3><%= @vehicule.description %></h3>
+      <h4><%= @vehicule.description %></h4>
         <span><%= @vehicule.category.name %></span>
           <div class="space-between">
             <span><%= @vehicule.price %>$</span>

@@ -1,4 +1,34 @@
 <<<<<<< HEAD
+<%# <body class="page-dashboard2">
+  <div class="custom-container">
+    <div class="text-dashboard">
+      <h1>Merci ! Vous avez bien réservé :</h1>
+      <div class="card">
+        <div class="card-body">
+          <h2>Véhicule : <%= @reservation.vehicule.name</h2>
+          <p>Date de réservation : <%= @reservation.date</p>
+        <%# </div>
+      </div>
+    </div>
+  </div>
+</body> %>
+<h1>Félicitations ! Vous avez réservé :</h1>
+<div class="card-holder">
+  <div class="card">
+    <img src= >
+    <h5><%= @reservation.vehicule.name%></h5>
+    <p><%=@vehicule.description%></p>
+    <ul>
+      <li>Réservé pour le :<%= @reservation.date%></li>
+    </ul>
+    <div class="links">
+      <%= link_to 'Retour au profile', dashboard_path %>
+      <%= link_to 'Retour aux annonces', root_path %>
+    </div>
+  </div>
+</div>
+=======
+<<<<<<< HEAD
 <h1>Merci pour votre réservation</h1>
 
 =======
@@ -14,3 +44,4 @@
 </div>
 </div>
 >>>>>>> 9d2f8ac5fa719a717a68d632f7c207a39f36d402
+>>>>>>> a2bf3c6d3c2b5b5e35967593034aaeccc5c9091f

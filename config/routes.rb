@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :vehicules do
+<<<<<<< HEAD
+    resources :reservations, only: [:new, :create, :edit, :update, :show]
+=======
     resources :reservations, only: [:new, :create]
+>>>>>>> a2bf3c6d3c2b5b5e35967593034aaeccc5c9091f
 
   end
   resources :categories, only: [:index, :show]
@@ -12,7 +16,8 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboards#user_profile'
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
+
+# Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+# Defines the root path route ("/")
+# root "articles#index"

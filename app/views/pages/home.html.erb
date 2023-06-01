@@ -6,6 +6,7 @@
       <%= link_to 'Se connecter', user_session_path, class: "btn btn-flat" %>
     </div>
   </div>
+
   <div class="container-filter">
 <div class="filters flex">
   <div class="textfilter">Filtres</div>
@@ -49,8 +50,9 @@
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 
-  <%= render 'card' %>
+    <%= render 'search' %>
   </div>
+
 
 
 <%# <%= link_to 'Mon profil',  %>

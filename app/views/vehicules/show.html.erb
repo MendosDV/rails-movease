@@ -39,3 +39,45 @@
     </div>
   <div>
 </div>
+<<<<<<< HEAD
+=======
+<h1>
+<%= @vehicule.name %>
+</h1>
+</div>
+<div class="container-card">
+
+        <div class="img-solo">
+          <%= cl_image_tag @vehicule.pictures.first.key, class:"img-first" if @vehicule.pictures.first %>
+        </div>
+
+        <div class="img-group">
+        <% @vehicule.pictures.drop(1).each do |picture| %>
+          <%= cl_image_tag picture.key, class:"img" %>
+        <% end %>
+        </div>
+
+</div>
+
+<div >
+<div class="container-description">
+    <h2> <%= @vehicule.description %> </h2>
+    <span><%= @vehicule.category.name %></span>
+      <div class="space-between">
+      <span><%= @vehicule.price %>$</span>
+      <%= cl_image_tag(@vehicule.user.avatar.key, class: "card-vehicule-user avatar-bordered") %>
+      </div>
+      
+      <div class="btn btn-primary">
+        <%# if @reservation.status == false || @reservation.status.nil? %>
+        <%= link_to 'reservation', new_vehicule_reservation_path(@vehicule) %>
+     
+      </div>
+</div>
+
+<div>
+
+</div>
+
+ <%# <%= link_to 'Modifier le vehicule', root_path %>
+>>>>>>> 9d2f8ac5fa719a717a68d632f7c207a39f36d402

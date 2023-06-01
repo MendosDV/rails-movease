@@ -52,6 +52,7 @@ harry = User.new(
 harry.avatar.attach(io: file_harry, filename: "Harry_Potter_u4ge5r.webp", content_type: "image/webp")
 harry.save
 
+
 file_superman = URI.open("https://res.cloudinary.com/dmgpqeugv/image/upload/v1685388828/development/owner/superman_mtewf9.png")
 superman = User.new(
   email: 'clark.kent@superman.com',
@@ -62,6 +63,31 @@ superman = User.new(
 )
 superman.avatar.attach(io: file_superman, filename: "superman_mtewf9.png", content_type: "image/png")
 superman.save
+
+
+file_wonderwoman = URI.open("https://res.cloudinary.com/dmgpqeugv/image/upload/v1685388827/development/owner/wonderwoman_i1j79s.webp")
+wonderwoman = User.new(
+  email: 'diana.prince@wonderwoman.com',
+  password: '123456',
+  first_name: 'Diana',
+  last_name: 'Prince',
+  phone_number: '0622345678'
+)
+wonderwoman.avatar.attach(io: file_wonderwoman, filename: "wonderwoman_i1j79s.webp", content_type: "image/webp")
+wonderwoman.save
+
+
+file_aladdin = URI.open("https://res.cloudinary.com/dmgpqeugv/image/upload/v1685388826/development/owner/Aladdin_gd7rie.jpg")
+aladdin = User.new(
+  email: 'aladdin@disney.com',
+  password: '123456',
+  first_name: 'Aladdin',
+  last_name: 'Ababoua',
+  phone_number: '0967654321'
+)
+aladdin.avatar.attach(io: file_aladdin, filename: "Aladdin_gd7rie.jpg", content_type: "image/jpg")
+aladdin.save
+
 
 # créer des véhicules associés aux users
 
@@ -87,7 +113,7 @@ voiture_pierrafeu = Vehicule.new(
 image_files_pierrafeu.each do |file|
   voiture_pierrafeu.pictures.attach(io: URI.open(file), filename: file)
 end
-voiture_pierrafeu.save!
+voiture_pierrafeu.save
 
 
 
@@ -166,3 +192,51 @@ image_files_superman.each do |file|
   voiture_superman.pictures.attach(io: URI.open(file), filename: file)
 end
 voiture_superman.save
+
+
+image_files_wonderwoman = [
+  'https://res.cloudinary.com/dmgpqeugv/image/upload/v1685613172/development/vehicules/invisible%20Jet%20-%20wonder%20woman/Invisible_jet_4_qx4vjj.jpg',
+  'https://res.cloudinary.com/dmgpqeugv/image/upload/v1685613172/development/vehicules/invisible%20Jet%20-%20wonder%20woman/invisible_jet_2_yprje3.jpg',
+  'https://res.cloudinary.com/dmgpqeugv/image/upload/v1685613172/development/vehicules/invisible%20Jet%20-%20wonder%20woman/invisible_jet_3_y32r4u.jpg',
+  'https://res.cloudinary.com/dmgpqeugv/image/upload/v1685613171/development/vehicules/invisible%20Jet%20-%20wonder%20woman/invisible-jet_1_wg9poj.jpg',
+]
+
+voiture_wonderwoman = Vehicule.new(
+  name: 'Invisible Jet',
+  description: "Prendre les airs dans le jet de la plus puissante des Amazones est désormais possible! Louez mon Jet invisible et découvrez la vie d'une super-héroïne. Avec cet avion invisible, vous pourrez voler incognito, vous rendre dans des lieux inaccessibles et combattre les forces du mal. Soyez prêt à utiliser votre lasso magique, à porter des bracelets indestructibles et à montrer au monde que les femmes sont aussi des super-héros! Girl Power !",
+  price: '749',
+  user_id: wonderwoman.id,
+  category: Category.find_by(name: 'Aérien'),
+  address: 'Lyon, France',
+  latitude:		45.7500,
+  longitude: 	4.8500
+)
+
+image_files_wonderwoman.each do |file|
+  voiture_wonderwoman.pictures.attach(io: URI.open(file), filename: file)
+end
+voiture_wonderwoman.save
+
+
+image_files_aladdin = [
+  'https://res.cloudinary.com/dmgpqeugv/image/upload/v1685392847/development/vehicules/tapis%20volant/tapis_volant_boxe_3_esz9mi.jpg',
+  'https://res.cloudinary.com/dmgpqeugv/image/upload/v1685392848/development/vehicules/tapis%20volant/Tapis_Volant_1_hfptpt.webp',
+  'https://res.cloudinary.com/dmgpqeugv/image/upload/v1685392848/development/vehicules/tapis%20volant/tapis_volant_2_ms7msx.jpg',
+  'https://res.cloudinary.com/dmgpqeugv/image/upload/v1685392848/development/vehicules/tapis%20volant/tapis_volant_echecs_4_h5vtwz.png'
+]
+
+voiture_aladdin = Vehicule.new(
+  name: 'Tapis volant',
+  description: "Louez mon tapis volant et préparez-vous à vivre des aventures digne des contes des mille et une nuits. Ce tapis volant vous emmènera à travers les cieux, vous fera survoler les déserts et vous fera découvrir des trésors cachés. Soyez prêt à rencontrer des génies, à échapper aux voleurs et à vivre des histoires d'amour inoubliables. Attention aux tempêtes de sable et aux méchants vizirs qui cherchent à vous voler votre liberté ! Peut aussi devenir votre adversaire aux échecs et à la boxe.",
+  price: '259',
+  user_id: aladdin.id,
+  category: Category.find_by(name: 'Aérien'),
+  address: 'Barcelone, Espagne',
+  latitude: 41.3850,
+  longitude: 2.1734
+)
+
+image_files_aladdin.each do |file|
+  voiture_aladdin.pictures.attach(io: URI.open(file), filename: file)
+end
+voiture_aladdin.save

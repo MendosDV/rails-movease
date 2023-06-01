@@ -5,7 +5,8 @@
   background-color: #e2dfdf;
   border-radius: 32px;
   overflow: hidden;
-  padding-bottom: 32px;
+  // border: solid 3px red;
+  padding: 32px;
 
   .custom-grid-index {
     gap: 24px;
@@ -15,7 +16,9 @@
     min-height: 54vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    // border: solid 3px rgb(0, 255, 68);
+
   }
 }
 .container-filter {
@@ -26,13 +29,22 @@
   overflow: hidden;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1227px) {
   /* Pour un écran < 960px, cette classe CSS s'applique */
   .custom-container {
     width: 85%;
 
     .custom-grid-index {
       grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  /* Pour un écran < 960px, cette classe CSS s'applique */
+  .custom-container {
+    .custom-grid-index {
+      justify-content: center;
     }
   }
 }

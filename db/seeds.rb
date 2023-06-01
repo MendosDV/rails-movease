@@ -14,9 +14,18 @@ require "open-uri"
 
 # créer des users
 
+
+# seeding image
+require "open-uri"
+
+file = URI.open("https://res.cloudinary.com/dmgpqeugv/image/upload/v1685389484/development/owner/fred-pierrafeu_ijszpl.jpg")
+user = User.new(title: "NES", body: "A great console")
+user.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user.save
+
 pierrafeu = User.create!(
   email: 'Fred@pierrafeu.com',
-  password: '12345ddddddddddddd6',
+  password: '123456',
   first_name: 'Fred',
   last_name: 'Pierrafeu',
   phone_number: '0612345678',

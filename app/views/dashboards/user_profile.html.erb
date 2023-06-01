@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="navbar">
    <div class="logo">
     <a href="<%= root_path %>">
@@ -62,6 +63,9 @@
             <%= link_to 'Supprimer', vehicule_path(vehicule), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
             <% end %>
       </div>
+=======
+<h1> Bienvenue <%= current_user.first_name%></h1>
+>>>>>>> a2bf3c6d3c2b5b5e35967593034aaeccc5c9091f
 
 
       ***********************************************************************
@@ -78,6 +82,7 @@
 
       ***********************************************************************
 
+<<<<<<< HEAD
       <div>
         <h2>Mon historique de réservations </h2>
           <ul>
@@ -86,3 +91,55 @@
     </div>
   </div>
 </body>
+=======
+
+  <h2>Mes véhicules</h2>
+
+    <div class="custom-grid-index">
+      <% @my_vehicules = current_user.vehicules %>
+        <% @my_vehicules.each do |vehicule| %>
+          <%= link_to vehicule_path(vehicule) do %>
+            <div class="card-vehicule">
+              <%= cl_image_tag(vehicule.pictures.first.key) if vehicule.pictures.attached? %>
+              <div class="card-vehicule-infos">
+                <div>
+                  <h2 class="size-name"><%= vehicule.name %></h2>
+                </div>
+                  <%= cl_image_tag(vehicule.user.avatar.key, class: "card-vehicule-user avatar-bordered") if vehicule.user.avatar.attached? %>
+              </div>
+                <div class="card-description">
+                  <p><%= vehicule.description.truncate(85) %></p>
+                </div>
+                <div class="price-category">
+                  <h3><strong><%= vehicule.price %>€/ jour    -    <%= vehicule.category.name %></h3></strong>
+                </div>
+                <div class="reservate">
+                  <%= "Réservé" unless vehicule.reservations.empty? %>
+                </div>
+            </div>
+          <% end %>
+    </div>
+          <%= link_to 'Modifier', edit_vehicule_path(vehicule) %> |
+          <%= link_to 'Supprimer', vehicule_path(vehicule), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+        <% end %>
+
+
+
+***********************************************************************
+
+<div>
+  <h2>Mes réservations en cours</h2>
+    <ul>
+
+    </ul>
+</div>
+
+***********************************************************************
+
+<div>
+  <h2>Mon historique de réservations </h2>
+    <ul>
+
+    </ul>
+</div>
+>>>>>>> a2bf3c6d3c2b5b5e35967593034aaeccc5c9091f

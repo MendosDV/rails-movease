@@ -1,6 +1,6 @@
 <div class="container">
   <div class="form-wrapper">
-    <h2>Reserve ton véhicule préféré</h2>
+    <h2>Réserve ton véhicule préféré</h2>
     <%= simple_form_for([@vehicule, @reservation]) do |f| %>
       <%= f.input :date, as: :date, input_html: { id: "range_start" } %>
       <%= f.button :submit, "reservation", class: "btn btn-primary" %>

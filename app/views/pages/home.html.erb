@@ -1,8 +1,6 @@
-<%= render 'navbar' %>
-
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallpapercave.com/wp/ZaHQ4Jf.jpg);">    <div class="container">
       <h1>Moveas vous <strong>fait voyager</strong> comme <strong>vos héros préférés </strong>!</h1>
-      <p>N'avez vous jamais rêvé de parcourir le monde à la vitesse de la lumière ?</p>
+      <p>N'avez-vous jamais rêvé de parcourir le monde à la vitesse de la lumière ?</p>
        <% if user_signed_in? %>
           <%= link_to 'Publier sur Movease', new_vehicule_path, class: "btn btn-flat" %>
           <% else %>
@@ -10,6 +8,7 @@
           <% end %>
     </div>
   </div>
+
   <div class="container-filter">
 <div class="filters flex">
   <div class="textfilter">Filtres</div>
@@ -18,7 +17,7 @@
         <div class="iconfilter flex">
               <i class="fa-solid fa-jet-fighter"></i>
         </div>
-        <span>Aerien</span>
+        <span>Aérien</span>
     </div>
     <div class="filter flex">
         <div class="iconfilter flex">
@@ -36,26 +35,29 @@
         <div class="iconfilter flex">
             <i class="fa-regular fa-hand-spock"></i>
         </div>
-        <span>Multi-tache</span>
+        <span>Multi-tâches</span>
     </div>
 
+  </div class="search-bar">
+    <%= form_with url: root_path, method: :get, class: "d-flex search-bar" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find by name or category"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
   </div>
+</div>
 
 </div>
+<div class="custom-container">
+
+  <div class="map"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
+  <%= render 'search' %>
 </div>
-  <div class="custom-container">
-
-    <div class="map"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-
-  <%= render 'card' %>
-  </div>
-
-
-<%# <%= link_to 'Mon profil',  %>
-<%= render 'footer' %>

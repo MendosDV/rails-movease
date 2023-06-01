@@ -2,10 +2,12 @@
 .custom-container {
   width: 80%;
   margin: 16px auto;
-  background-color: #e2dfdf;
+  // background-color: #e2dfdf;
+  background-color: white;
   border-radius: 32px;
   overflow: hidden;
-  padding-bottom: 32px;
+  // border: solid 3px red;
+  padding: 32px;
 
   .custom-grid-index {
     gap: 24px;
@@ -13,9 +15,13 @@
     grid-template-columns: repeat(4, 1fr);
     place-items: center;
     min-height: 54vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+<<<<<<< HEAD
+    justify-content: space-between;
+    border: solid 3px rgb(0, 255, 68);
+
+=======
+    // border: solid 3px rgb(0, 255, 68);
+>>>>>>> 1d8714e1a28559ead7658cd7da94e567af6493ac
   }
 }
 .container-filter {
@@ -26,7 +32,7 @@
   overflow: hidden;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1800px) {
   /* Pour un écran < 960px, cette classe CSS s'applique */
   .custom-container {
     width: 85%;
@@ -37,13 +43,25 @@
   }
 }
 
+@media (max-width: 1160px) {
+  /* Pour un écran < 960px, cette classe CSS s'applique */
+  .custom-container {
+    width: 85%;
+
+    .custom-grid-index {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+
 @media (max-width: 720px) {
   /* Pour un écran < 720px, cette classe CSS s'applique */
   .custom-container {
     width: 90%;
 
     .custom-grid-index {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 
@@ -71,6 +89,7 @@
   }
 }
 
+<<<<<<< HEAD
 .page-dashboard {
   background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700513114.jpg');
 
@@ -78,4 +97,14 @@
 
 .page-dashboard2{
   background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700513114.jpg');
+=======
+.custom-container-log {
+  width: 60%;
+  margin: 16px auto;
+  background-color: #e2dfdf;
+  border-radius: 32px;
+  overflow: hidden;
+  // border: solid 3px red;
+  padding: 32px;
+>>>>>>> a2bf3c6d3c2b5b5e35967593034aaeccc5c9091f
 }

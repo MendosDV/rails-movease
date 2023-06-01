@@ -5,6 +5,15 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform 0.5s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+}
+
+.reservate {
+  background-color: rgba(80, 76, 76, 0.601);
 }
 
 .card-vehicule > img {
@@ -61,7 +70,8 @@
 }
 
 .price-category {
-  padding: 16px;
+  padding: 0px;
+  padding-top: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,9 +81,22 @@
   }
 }
 
-.reservate {
+.reservation {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 4px;
+}
+
+@media (max-width: 1354px) {
+  .card-vehicule {
+    width: 300px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .card-vehicule {
+    width: 280px;
+    height: 380px;
+  }
 }

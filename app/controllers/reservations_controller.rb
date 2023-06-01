@@ -13,10 +13,6 @@ class ReservationsController < ApplicationController
 
   def show
     @vehicule = Vehicule.find(params[:vehicule_id])
-=======
-    
-
->>>>>>> a2bf3c6d3c2b5b5e35967593034aaeccc5c9091f
   end
 
   def create

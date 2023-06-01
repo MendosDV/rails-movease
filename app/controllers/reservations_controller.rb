@@ -12,7 +12,6 @@ class ReservationsController < ApplicationController
   end
 
   def show
-<<<<<<< HEAD
     @vehicule = Vehicule.find(params[:vehicule_id])
 =======
     

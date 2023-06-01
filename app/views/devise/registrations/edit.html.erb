@@ -16,16 +16,13 @@
                 input_html: { autocomplete: "first_name" } %>
     <%= f.input :last_name,
                 required: true,
-                autofocus: true,
                 input_html: { autocomplete: "last_name" } %>
     <%= f.input :phone_number,
                 required: true,
-                autofocus: true,
                 input_html: { autocomplete: "phone_number" } %>
     <%= f.input :avatar, as: :file,
                 required: true,
-                autofocus: true,
-                input_html: { autocomplete: "pictures" } %>
+                input_html: { autocomplete: "avatar" } %>
     <%= f.input :current_password,
                 hint: "we need your current password to confirm your changes",
                 required: true,

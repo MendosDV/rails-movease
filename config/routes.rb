@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :vehicules do
-    resources :reservations, only: [:new, :create, :edit, :update]
+    resources :reservations, only: [:new, :create, :edit, :update, :show]
+    
   end
   resources :categories, only: [:index, :show]
 

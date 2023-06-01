@@ -1,5 +1,5 @@
 <div class="custom-grid-index">
-  <% @vehicules.each do |vehicule| %>
+  <% vehicules.each do |vehicule| %>
     <%= link_to vehicule_path(vehicule) do %>
       <div class="card-vehicule">
         <%= cl_image_tag(vehicule.pictures.first.key) if vehicule.pictures.attached? %>

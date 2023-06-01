@@ -1,7 +1,16 @@
 class PagesController < ApplicationController
-  
+
   def home
+
     @vehicules = Vehicule.all
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        vehicules.name ILIKE :query
+        OR vehicules.description ILIKE :query
+        OR categories.name ILIKE :query
+      SQL
+      @vehicules = @vehicules.joins(:category).where(sql_subquery, query: "%#{params[:query]}%")
+    end
 
     @markers = @vehicules.geocoded.map do |vehicule|
       {

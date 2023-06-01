@@ -9,7 +9,7 @@ Vehicule.destroy_all
 Category.create!(name: "Aérien")
 Category.create!(name: "Maritime")
 Category.create!(name: "Terrestre")
-Category.create!(name: "Multi-tâche")
+Category.create!(name: "Multi-tâches")
 
 
 # créer des users
@@ -52,6 +52,16 @@ harry = User.new(
 harry.avatar.attach(io: file_harry, filename: "Harry_Potter_u4ge5r.webp", content_type: "image/webp")
 harry.save
 
+file_superman = URI.open("https://res.cloudinary.com/dmgpqeugv/image/upload/v1685388828/development/owner/superman_mtewf9.png")
+superman = User.new(
+  email: 'clark.kent@superman.com',
+  password: '123456',
+  first_name: 'Clark',
+  last_name: 'Kent',
+  phone_number: '0612345678'
+)
+superman.avatar.attach(io: file_superman, filename: "superman_mtewf9.png", content_type: "image/png")
+superman.save
 
 # créer des véhicules associés aux users
 
@@ -68,7 +78,6 @@ voiture_pierrafeu = Vehicule.new(
   description: "Besoin d'un moyen de transport préhistorique ? Une envie de se muscler les cuisses tout en s’amusant ? Louez notre incroyable voiture à pédales et remontez dans le temps. Avec ce véhicule écologique, vous pourrez explorer le monde des dinosaures, rencontrer des voisins des cavernes et vivre des aventures paléolithiques. Soyez prêt à pousser vos jambes, à fredonner 'Yabba Dabba Doo !' et à construire des maisons en pierre. Attention aux T-Rex affamés !",
   price: '100',
   user_id: pierrafeu.id,
-  category: Category.find_by(name: 'Terrestre'),
   category: Category.find_by(name: 'Terrestre'),
   address: 'Souppes-sur-Loing, France',
   latitude: 2.733,
@@ -129,3 +138,31 @@ image_files_harry.each do |file|
   voiture_harry.pictures.attach(io: URI.open(file), filename: file)
 end
 voiture_harry.save
+
+
+image_files_superman = [
+  'https://res.cloudinary.com/dmgpqeugv/image/upload/v1685613171/development/vehicules/cape%20superman/cape_2_md9lbe.jpg',
+  'https://res.cloudinary.com/dmgpqeugv/image/upload/v1685613169/development/vehicules/cape%20superman/Cape_1_tzqq6t.webp',
+  'https://res.cloudinary.com/dmgpqeugv/image/upload/v1685392847/development/vehicules/cape%20superman/chaussettes-superman-cape_r6mcg0.jpg',
+  'https://res.cloudinary.com/dmgpqeugv/image/upload/v1685613170/development/vehicules/cape%20superman/slip-superman-cape_vj1ppp.jpg'
+]
+
+voiture_superman = Vehicule.new(
+  name: 'Cape',
+  description: "Vous avez toujours rêvé d’arriver à l’heure à vos rendez-vous ? D’éviter les embouteillages pour aller au bureau ? Ou bien de voler parmi les oiseaux?  J’ai ce qu’il vous faut : Ma super cape !!
+  . Cette cape en soie kryptonienne vous donnera le pouvoir de voler, de résister aux balles et de combattre le crime avec une poigne d'acier. Soyez prêt à incarner la véritable essence de la justice, à sauver les innocents et à montrer au monde que vous êtes bien plus qu'un simple mortel. Attention aux fragments de kryptonite et aux méchants aux plans diaboliques
+  !
+  En bonus : caleçon et chaussettes assortis ;)
+  ",
+  price: '999',
+  user_id: superman.id,
+  category: Category.find_by(name: 'Multi-tâches'),
+  address: 'Metropolis, illinois, USA',
+  latitude:		37.1511,
+  longitude: 	-88.7319
+)
+
+image_files_superman.each do |file|
+  voiture_superman.pictures.attach(io: URI.open(file), filename: file)
+end
+voiture_superman.save

@@ -15,31 +15,37 @@ require "open-uri"
 # créer des users
 
 
-# seeding image
-require "open-uri"
+# seeding images cloudinary
 
 file = URI.open("https://res.cloudinary.com/dmgpqeugv/image/upload/v1685389484/development/owner/fred-pierrafeu_ijszpl.jpg")
-user = User.new(title: "NES", body: "A great console")
-user.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-user.save
-
-pierrafeu = User.create!(
+pierrafeu = User.new(
   email: 'Fred@pierrafeu.com',
   password: '123456',
   first_name: 'Fred',
   last_name: 'Pierrafeu',
-  phone_number: '0612345678',
-  avatar: '/app/assets/images/users/fred-pierrafeu.jpeg'
+  phone_number: '0612345678'
 )
+user.photo.attach(io: file, filename: "fred-pierrafeu_ijszpl.jpg", content_type: "image/jpg")
+user.save
 
-k2000 = User.create!(
-  email: 'mickaelknight@k2000.com',
-  password: '123456',
-  first_name: 'Mickael',
-  last_name: 'Knight',
-  phone_number: '0987654321',
-  avatar: '/app/assets/images/users/mickael-knight.jpg'
-)
+# pierrafeu = User.create!(
+#   email: 'Fred@pierrafeu.com',
+#   password: '123456',
+#   first_name: 'Fred',
+#   last_name: 'Pierrafeu',
+#   phone_number: '0612345678',
+#   avatar: '/app/assets/images/users/fred-pierrafeu.jpeg'
+# )
+
+# k2000 = User.create!(
+#   email: 'mickaelknight@k2000.com',
+#   password: '123456',
+#   first_name: 'Mickael',
+#   last_name: 'Knight',
+#   phone_number: '0987654321',
+#   avatar: '/app/assets/images/users/mickael-knight.jpg'
+# )
+
 
 # créer des véhicules associés aux users
 Vehicule.destroy_all

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  before_save :set_default_avatar
+  # before_save :set_default_avatar
 
   # Include default devise modules. Others available are:
 
@@ -19,8 +19,8 @@ class User < ApplicationRecord
 
 
 
-  def set_default_avatar
-    self.avatar ||= 'app/assets/images/users/avatar_default.png'
-  end
+  # def set_default_avatar
+  #   self.avatar ||= 'app/assets/images/users/avatar_default.png'
+  # end
 
 end

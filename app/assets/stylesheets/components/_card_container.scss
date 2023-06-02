@@ -1,5 +1,30 @@
 .content-show{
-  border: solid 2px red;
+  display: flex;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.reservate {
+  width: 150%;
+  text-align: center;
+  background-color: white;
+    .reservate {
+      width: 80px;
+    }
+
+    p {
+      font-size: 32px;
+    }
+}
+
+.image-reservate {
+  display: flex;
+  justify-content: center;
+  width: 80px;
+  margin: 0 auto;
+  margin-bottom: 24px;
 }
 
 .container-card{
@@ -37,7 +62,7 @@
   }
 }
 // h1 {
-//   text-align: center;
+//   text-align: justify;
 // }
 
 .img-first {

@@ -1,13 +1,13 @@
 /* Footer */
 footer {
-  background-color: #f9f9f9;
+  background-color: #ece8e8;
   padding: 10px;
   text-align: center;
   left: 0;
+  right: 0;
   bottom: 0;
   height: 54px;
-  width: 100%;
-  
+  width: auto;
 }
 
 .footer-links {
@@ -30,4 +30,5 @@ footer {
   font-family: 'Dancing Script', cursive;
   font-style: italic;
   font-size: 12px;
+  color: #333;
 }

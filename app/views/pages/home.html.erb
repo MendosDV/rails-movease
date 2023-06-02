@@ -17,25 +17,29 @@
         <div class="iconfilter flex">
               <i class="fa-solid fa-jet-fighter"></i>
         </div>
-        <span>Aérien</span>
+                <%= link_to "Aérien", root_path(query: 'Aérien') %>
+
     </div>
     <div class="filter flex">
         <div class="iconfilter flex">
               <i class="fa-solid fa-car-side"></i>
         </div>
-        <span>Terrestre</span>
+                <%= link_to "terrestre", root_path(query: 'terrestre') %>
+
     </div>
     <div class="filter flex">
         <div class="iconfilter flex">
               <i class="fa-solid fa-anchor"></i>
         </div>
-        <span>Maritime</span>
+               <%= link_to "maritime", root_path(query: 'maritime') %>
+
     </div>
     <div class="filter flex">
         <div class="iconfilter flex">
             <i class="fa-regular fa-hand-spock"></i>
         </div>
-        <span>Multi-tâches</span>
+                <%= link_to "multi-tache", root_path(query: 'multi-tache') %>
+
     </div>
 
   </div class="search-bar">

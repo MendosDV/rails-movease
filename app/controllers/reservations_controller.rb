@@ -21,7 +21,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     @reservation.vehicule = @vehicule
     if @reservation.save
-      redirect_to reservation_path(@reservation), notice: "Votre vehicule a bien été enregistré"
+      redirect_to dashboard_path, notice: "Votre vehicule a bien été enregistré"
     else
       render :new
     end

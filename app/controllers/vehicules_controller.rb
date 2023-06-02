@@ -25,7 +25,7 @@ class VehiculesController < ApplicationController
     @vehicule.user = current_user
 
     if @vehicule.save
-      redirect_to root_path, notice: "Votre vehicule a bien été enregistré"
+      redirect_to vehicule_path(@vehicule), notice: "Votre vehicule a bien été enregistré"
     else
       render :new
     end

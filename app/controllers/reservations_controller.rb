@@ -1,8 +1,18 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+  before_action :set_reservation, only: [:show, :edit, :update, :destroy, :accept, :decline]
 
   def index
     @reservations = Reservation.all
+  end
+
+  def accept
+    @reservation.accept!
+    redirect_to dashboard_path, notice: "Votre réservation a bien été acceptée"
+  end
+
+  def decline
+    @reservation.decline!
+    redirect_to dashboard_path, notice: "Votre réservation a bien été refusée"
   end
 
   def new
@@ -25,17 +35,10 @@ class ReservationsController < ApplicationController
     else
       render :new
     end
-
-
   end
 
-  # def edit
 
-  # end
 
-  # def update
-
-  # end
 
   def destroy
     @vehicule.destroy(params_reservation)
@@ -52,4 +55,6 @@ class ReservationsController < ApplicationController
   def set_reservation
     @reservation = Reservation.find(params[:id])
   end
+
+
 end

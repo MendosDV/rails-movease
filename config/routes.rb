@@ -11,15 +11,20 @@ Rails.application.routes.draw do
   end
   resources :categories, only: [:index, :show]
 
-  resources :reservations, only: [:destroy, :show, :update, :edit]
+  resources :reservations, only: [:destroy, :show, :update, :edit] do
+    member do
+      post :accept
+      post :decline
+    end
+  end
 
   get '/dashboard', to: 'dashboards#user_profile'
-
   get 'conversations', to: 'messages#conversations'
+
   resources :users do
     resources :messages, only: [:index, :create]
   end
-  
+
 end
 
 # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,3 +1,30 @@
+<div class="custom-container">
+  <div>
+    <h1><%= @vehicule.name %></h1>
+  </div>
+
+  <div class="container-cardy">
+    <div class="img-solo">
+      <%= cl_image_tag @vehicule.pictures.first.key, class:"img-first" if @vehicule.pictures.first %>
+    </div>
+
+    <div class="img-group gallery">
+      <% @vehicule.pictures.drop(1).each do |picture| %>
+        <%= cl_image_tag picture.key, class:"img" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="content-show">
+    <div>
+      <p><%= @vehicule.description %></p>
+    </div>
+    <div class="reservate">
+    </div>
+  </div>
+
+</div>
+
 <div class="container">
 </div>
 

@@ -1,3 +1,7 @@
+.content-show{
+  border: solid 2px red;
+}
+
 .container-card{
   display: flex;
   // border: solid 5px red;
@@ -6,6 +10,16 @@
   background-color: rgb(232, 225, 225);
   border-radius: 8px;
 }
+
+.container-cardy{
+  display: flex;
+  // border: solid 5px red;
+  width: 100%;
+  margin: auto;
+  background-color: rgb(232, 225, 225);
+  border-radius: 8px;
+}
+
 .container-description{
 
   display: block;

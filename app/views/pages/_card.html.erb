@@ -23,9 +23,6 @@
           <div class="price-category">
             <h3><strong><%= vehicule.price %>€/ jour    -    <%= vehicule.category.name %></h3></strong>
           </div>
-          <div class="reservation">
-            <%= "Réservé" unless vehicule.reservations.empty? %>
-          </div>
       </div>
     <% end %>
   <% end %>

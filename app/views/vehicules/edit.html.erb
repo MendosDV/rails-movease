@@ -1,31 +1,35 @@
-<h1>Modifie ton super véhicule</h1>
+<div class="custom-container">
+  <div class="cardy-update">
+    <div>
+      <h2>Modifie ton super véhicule</h2>
+    </div>
+    <%= simple_form_for @vehicule do |f| %>
+      <%= f.error_notification %>
 
- <%= simple_form_for @vehicule do |f| %>
-  <%= f.error_notification %>
+      <div class="form-inputs">
+      <%= f.input   :name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "name" } %>
+        <%= f.input :description,
+                    required: true,
+                    input_html: { autocomplete: "description" } %>
+        <%= f.input :price,
+                    required: true,
+                    input_html: { autocomplete: "price" } %>
+        <%= f.input :address,
+                    required: true,
+                    autofocus: true,
+                    input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+                    wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
+        <%= f.input :pictures, as: :file,
+                    required: true,
+                    input_html: { autocomplete: "pictures", multiple: true } %>
+        <%= f.input :category_id, collection: Category.pluck(:name, :id) %>
 
-  <div class="form-inputs">
-  <%= f.input   :name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "name" } %>
-    <%= f.input :description,
-                required: true,
-                input_html: { autocomplete: "description" } %>
-    <%= f.input :price,
-                required: true,
-                input_html: { autocomplete: "price" } %>
-    <%= f.input :address,
-                required: true,
-                autofocus: true,
-                input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-                wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
-    <%= f.input :pictures, as: :file,
-                required: true,
-                input_html: { autocomplete: "pictures", multiple: true } %>
-    <%= f.input :category_id, collection: Category.pluck(:name, :id) %>
-
+        <div class="action">
+          <button class="action-button"><%= f.button :submit, "Sauvegarder" %></button>
+        </div>
+    <% end %>
   </div>
-  <div class="form-actions">
-    <%= f.button :submit, "Save" %>
-  </div>
-<% end %>
+</div>

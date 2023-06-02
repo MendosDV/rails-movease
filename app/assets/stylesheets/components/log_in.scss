@@ -35,14 +35,31 @@ input {
 	padding: .75rem;
 }
 
+.cardy-update {
+  max-width: 540px;
+  margin: 2rem auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-color: #FFF;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px 0 rgba(#999, .25);
+	padding: .75rem;
+
+    h2 {
+      padding-bottom: 32px;
+      font-weight: bold;
+    }
+}
+
 .cardy-image {
 	border-radius: 8px;
 	overflow: hidden;
 	padding-bottom: 65%;
-	background-image: url('https://assets.codepen.io/285131/coffee_1.jpg');
+	background-image: url('https://www.creativefabrica.com/wp-content/uploads/2020/09/23/WELCOME-Graphics-5632158-1.jpg');
 	background-repeat: no-repeat;
-	background-size: 150%;
-	background-position: 0 5%;
+	background-size: contain;
+	// background-position: 0 5%;
 	position: relative;
 }
 

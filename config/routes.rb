@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'messages/conversations'
+  get 'messages/index'
+  get 'messages/create'
   devise_for :users
   root to: "pages#home"
 
@@ -12,6 +15,11 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboards#user_profile'
 
+  get 'conversations', to: 'messages#conversations'
+  resources :users do
+    resources :messages, only: [:index, :create]
+  end
+  
 end
 
 # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,6 +1,7 @@
 class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :vehicule
+
   # has_many :reviews
   validate :check_date_availability
   # validates :date, presence: true, uniqueness: { scope: :vehicule }

@@ -24,19 +24,20 @@
     <div class="links">
       <%= link_to 'Retour au profile', dashboard_path %>
       <%= link_to 'Retour aux annonces', root_path %>
+      <%= link_to 'Contacter le propriétaire', user_messages_path(@vehicule.user) %>
     </div>
   </div>
 </div>
 <h1>Merci pour votre réservation</h1>
 
 <div class="container">
-<div class="row">
-<div class="col">
-<h1>merci pour la réservation</h1>
-<div>
-<%= @reservation.vehicule.name %>
-</div>
-<%= @reservation.date %>
-</div>
-</div>
+  <div class="row">
+    <div class="col">
+      <h1>merci pour la réservation</h1>
+        <div>
+          <%= @reservation.vehicule.name %>
+        </div>
+        <%= @reservation.date %>
+    </div>
+  </div>
 </div>

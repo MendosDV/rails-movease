@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :vehicules, dependent: :destroy
   # has_many :reviews, through: :reservation
 
+  has_many :messages
+  has_many :messages_received, class_name: 'Message', foreign_key: :to_id
+  has_many :notifications
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -18,9 +22,15 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
 
+  def friends
+    friends = Message.where(sender: self).map { |message| message.receiver} + Message.where(receiver: self).map { |message| message.sender}
+    friends.uniq
+  end
 
-  # def set_default_avatar
-  #   self.avatar ||= 'app/assets/images/users/avatar_default.png'
-  # end
+  def conversation_with(friend_id)
+    friend       = User.find(friend_id)
+    conversation = Message.where(sender: self, receiver: friend) + Message.where(sender: friend, receiver: self)
+    conversation.sort_by { |message| message.created_at }
+  end
 
 end

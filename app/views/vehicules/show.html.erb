@@ -36,5 +36,10 @@
           <% end %>
           </div>
     </div>
+
+    <%= link_to user_messages_path(@vehicule.user) do %>
+      <button class="btn btn-info">Contacter le propriétaire</button>
+    <% end %>
+
   <div>
 </div>

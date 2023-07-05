@@ -1,4 +1,8 @@
-<h3>My conversation with <%= @friend.first_name %></h3>
+
+<div class="custom-container">
+  <div class="cardy">
+
+    <h3>My conversation with <%= @friend.first_name %></h3>
   <% @messages.each do |message| %>
     <ul>
       <li><p><%= message.sender.first_name %> says : <%= message.content %></p></li>
@@ -11,3 +15,6 @@
 <% end %>
 
 <%= link_to 'Back to conversations', conversations_path %>
+  </div>
+</div>
+

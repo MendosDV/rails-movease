@@ -1,13 +1,13 @@
-<h3>Ma conversation avec <%= @friend.first_name %></h3>
+<h3>My conversation with <%= @friend.first_name %></h3>
   <% @messages.each do |message| %>
     <ul>
-      <li><p><%= message.sender.first_name %> dit : <%= message.content %></p></li>
+      <li><p><%= message.sender.first_name %> says : <%= message.content %></p></li>
     </ul>
   <% end %>
 
 <%= simple_form_for [@friend, @message] do |f| %>
   <%= f.input :content %>
-  <%= f.submit "Envoyer un message", class: "btn btn-primary" %>
+  <%= f.submit "Send a message", class: "btn btn-primary" %>
 <% end %>
 
-<%= link_to 'Retour aux conversations', conversations_path %>
+<%= link_to 'Back to conversations', conversations_path %>

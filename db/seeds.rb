@@ -6,10 +6,10 @@ Vehicule.destroy_all
 
 # créer les catégories
 
-Category.create!(name: "Aérien")
+Category.create!(name: "Aerial")
 Category.create!(name: "Maritime")
-Category.create!(name: "Terrestre")
-Category.create!(name: "Multi-tâches")
+Category.create!(name: "Land")
+Category.create!(name: "Multi-purpose")
 
 ################################################################################
 # créer des users
@@ -153,7 +153,7 @@ voiture_pierrafeu = Vehicule.new(
   description: "Besoin d'un moyen de transport préhistorique ? Une envie de se muscler les cuisses tout en s’amusant ? Louez notre incroyable voiture à pédales et remontez dans le temps. Avec ce véhicule écologique, vous pourrez explorer le monde des dinosaures, rencontrer des voisins des cavernes et vivre des aventures paléolithiques. Soyez prêt à pousser vos jambes, à fredonner 'Yabba Dabba Doo !' et à construire des maisons en pierre. Attention aux T-Rex affamés !",
   price: '100',
   user_id: pierrafeu.id,
-  category: Category.find_by(name: 'Terrestre'),
+  category: Category.find_by(name: 'Land'),
   address: 'Souppes-sur-Loing, France',
   latitude: 2.733,
   longitude: 48.1833
@@ -178,7 +178,7 @@ voiture_k2000 = Vehicule.new(
   description: "En quête d'une voiture high-tech à intelligence artificielle ? Chat-GPT peut retourner se coucher, : Louez ma K200, la voiture intelligente la plus impressionnante jamais créée. Dotée d'une IA avancée, de gadgets futuristes et d'une carrosserie indémodable, cette voiture vous emmènera dans des missions pleines d'action. Soyez prêt à parler à votre voiture, à faire des sauts spectaculaires et à défendre la justice. Attention aux hackers malveillants et aux situations où vous avez besoin de turbo boost à la dernière seconde !",
   price: '359',
   user_id: k2000.id,
-  category: Category.find_by(name: 'Terrestre'),
+  category: Category.find_by(name: 'Land'),
   address: 'Perpignan, France',
   latitude:	42.6886,
   longitude: 2.89483
@@ -203,7 +203,7 @@ voiture_harry = Vehicule.new(
   description: "Êtes-vous prêt à survoler les cieux avec style et magie ? Louez mon Nimbus 2000, le balai volant le plus rapide et le plus maniable de tout Poudlard. Que vous soyez un sorcier chevronné ou un débutant en quête de sensations fortes, le Nimbus 2000 vous emmènera dans une aventure aérienne que vous n'oublierez jamais. Quidditch, escapades nocturnes ou simplement échapper aux embouteillages moldus, ce balai est l'accessoire indispensable pour tout sorcier moderne. Attention aux chutes vertigineuses et aux courants d'air imprévisibles !",
   price: '599',
   user_id: harry.id,
-  category: Category.find_by(name: 'Aérien'),
+  category: Category.find_by(name: 'Aerial'),
   address: 'London, England, UK',
   latitude:		51.5073,
   longitude: 	-0.1277
@@ -232,7 +232,7 @@ voiture_superman = Vehicule.new(
   ",
   price: '999',
   user_id: superman.id,
-  category: Category.find_by(name: 'Multi-tâches'),
+  category: Category.find_by(name: 'Multi-purpose'),
   address: 'Paris, France',
   latitude:		48.8566,
   longitude: 	2.3522
@@ -257,7 +257,7 @@ voiture_wonderwoman = Vehicule.new(
   description: "Prendre les airs dans le jet de la plus puissante des Amazones est désormais possible! Louez mon Jet invisible et découvrez la vie d'une super-héroïne. Avec cet avion invisible, vous pourrez voler incognito, vous rendre dans des lieux inaccessibles et combattre les forces du mal. Soyez prêt à utiliser votre lasso magique, à porter des bracelets indestructibles et à montrer au monde que les femmes sont aussi des super-héros! Girl Power !",
   price: '749',
   user_id: wonderwoman.id,
-  category: Category.find_by(name: 'Aérien'),
+  category: Category.find_by(name: 'Aerial'),
   address: 'Lyon, France',
   latitude:		45.7500,
   longitude: 	4.8500
@@ -282,7 +282,7 @@ voiture_aladdin = Vehicule.new(
   description: "Louez mon tapis volant et préparez-vous à vivre des aventures digne des contes des mille et une nuits. Ce tapis volant vous emmènera à travers les cieux, vous fera survoler les déserts et vous fera découvrir des trésors cachés. Soyez prêt à rencontrer des génies, à échapper aux voleurs et à vivre des histoires d'amour inoubliables. Attention aux tempêtes de sable et aux méchants vizirs qui cherchent à vous voler votre liberté ! Peut aussi devenir votre adversaire aux échecs et à la boxe.",
   price: '259',
   user_id: aladdin.id,
-  category: Category.find_by(name: 'Aérien'),
+  category: Category.find_by(name: 'Aerial'),
   address: 'Barcelone, Espagne',
   latitude: 41.3850,
   longitude: 2.1734
@@ -332,7 +332,7 @@ voiture_batman = Vehicule.new(
   description: "Êtes-vous prêt à rejoindre les ténèbres de Gotham City ? Louez mes incroyables véhicules de Batman et devenez le justicier nocturne que la ville mérite. Avec  la puissance de la Batmobile vous serez prêt à combattre le crime avec style. Faites peur aux méchants, faites des cascades spectaculaires et ressentez la puissance de la technologie de pointe. Attention aux pièges du Joker, aux poursuites infernales et aux chauves-souris un peu trop collantes !",
   price: '799',
   user_id: batman.id,
-  category: Category.find_by(name: 'Terrestre'),
+  category: Category.find_by(name: 'Land'),
   address: 'Genève, Suisse',
   latitude: 46.2043,
   longitude: 6.1431
@@ -357,7 +357,7 @@ voiture_naruto = Vehicule.new(
   description: "Prêt à devenir un ninja légendaire ? Louez mon partenaire, la grenouille géante Toad Gamakichi. En compagnie de Gamakichi, vous pourrez sauter d'arbre en arbre, utiliser des techniques de combat incroyables et vivre des aventures épiques. Soyez prêt à défendre votre village, à déjouer les plans des méchants et à manger des bols entiers de nouilles ramen. Attention aux pièges ninja et aux ennemis puissants !",
   price: '799',
   user_id: naruto.id,
-  category: Category.find_by(name: 'Multi-tâches'),
+  category: Category.find_by(name: 'Multi-purpose'),
   address: 'Amsterdam, Pays-Bas',
   latitude: 52.3702,
   longitude: 4.8951
@@ -382,7 +382,7 @@ voiture_ironman = Vehicule.new(
   description: "Vous voulez vous sentir comme un véritable super-héros ? Mon incroyable armure Iron Man est faite pour vous. Avec cette armure high-tech, vous serez prêt à voler dans les cieux, à repousser les ennemis avec des rayons repulsors et à sauver le monde, une explosion à la fois. Soyez prêt à attirer l'attention, à faire tourner les têtes et à montrer à tous que vous êtes le super-héros ultime. Attention aux maléfiques qui cherchent à vous voler votre technologie et aux pannes de batterie au moment le plus crucial !",
   price: '850',
   user_id: ironman.id,
-  category: Category.find_by(name: 'Multi-tâches'),
+  category: Category.find_by(name: 'Multi-purpose'),
   address: 'Madrid, Espagne',
   latitude: 40.4167,
   longitude: -3.7037

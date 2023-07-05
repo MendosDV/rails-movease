@@ -1,20 +1,20 @@
 <body class="page-dashboard">
   <div class="custom-container">
     <div class="text-dashboard">
-      <h1> Bienvenue <%= current_user.first_name%></h1>
+      <h1> Welcome <%= current_user.first_name%></h1>
 
 
       <div>
-        <h2>Mes informations personnelles</h2>
-          <%= link_to 'Modifier mon profil', edit_user_registration_path %> |
-          <%= link_to 'Supprimer mon compte', user_registration_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+        <h2>"My Personal Information"</h2>
+          <%= link_to 'Edit my profile', edit_user_registration_path %> |
+          <%= link_to 'Delete my account', user_registration_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
           <br>
       </div>
 
       ***********************************************************************
 
 
-  <h2>Mes véhicules</h2>
+  <h2>My vehicules</h2>
 
     <div class="custom-grid-index">
       <% @my_vehicules = current_user.vehicules %>
@@ -32,10 +32,10 @@
                   <p><%= vehicule.description.truncate(85) %></p>
                 </div>
                 <div class="price-category">
-                  <h3><strong><%= vehicule.price %>€/ jour    -    <%= vehicule.category.name %></h3></strong>
+                  <h3><strong><%= vehicule.price %>$/ day    -    <%= vehicule.category.name %></h3></strong>
                 </div>
                 <div class="reservate">
-                  <%= "Réservé" unless vehicule.reservations.empty? %>
+                  <%= "Booked" unless vehicule.reservations.empty? %>
                 </div>
             </div>
           <% end %>
@@ -54,7 +54,7 @@
 ***********************************************************************
 
       <div>
-     <h2>Mes réservations en cours</h2>
+     <h2>My Current Reservations</h2>
   <ul>
     <% @my_reservations.each do |reservation| %>
       <li><%= link_to reservation.vehicule.name, vehicule_reservation_path(reservation.vehicule, reservation) %></li>
@@ -73,7 +73,7 @@
       <%= link_to "Accepter", accept_reservation_path(reservation), data: {turbo_method: :post, turbo_confirm: 'Êtes-vous sûr?'} %>
       <%= link_to "Refuser", decline_reservation_path(reservation), data: {turbo_method: :post, turbo_confirm: 'Êtes-vous sûr?'} %>
     <% else %>
-      <p>Vous n'êtes pas le proprio</p>
+      <p>You are not the owner</p>
     <% end %>
     </div>
   <% end %>

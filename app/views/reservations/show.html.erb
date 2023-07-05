@@ -1,25 +1,25 @@
-<h1>Félicitations ! Vous avez réservé :</h1>
+<h1>Congrats ! You have booked :</h1>
 <div class="card-holder">
   <div class="card">
     <img src= >
     <h5><%= @reservation.vehicule.name%></h5>
     <p><%=@vehicule.description%></p>
     <ul>
-      <li>Réservé pour le :<%= @reservation.date%></li>
+      <li>booked for :<%= @reservation.date%></li>
     </ul>
     <div class="links">
-      <%= link_to 'Retour au profile', dashboard_path %>
-      <%= link_to 'Retour aux annonces', root_path %>
-      <%= link_to 'Contacter le propriétaire', user_messages_path(@vehicule.user) %>
+      <%= link_to 'Back to dashboard', dashboard_path %>
+      <%= link_to 'Back to announcements', root_path %>
+      <%= link_to 'Contact the owner', user_messages_path(@vehicule.user) %>
     </div>
   </div>
 </div>
-<h1>Merci pour votre réservation</h1>
+<h1>Thank your for your reservation</h1>
 
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1>merci pour la réservation</h1>
+      <h1>Thank you for the reservation</h1>
         <div>
           <%= @reservation.vehicule.name %>
         </div>

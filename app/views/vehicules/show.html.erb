@@ -21,12 +21,13 @@
         <p><%= @vehicule.description %></p>
       </div>
       <div>
-        <p><strong>Catégorie : <%= @vehicule.category.name %></strong></p>
+        <p><strong>Category: <%= @vehicule.category.name %></strong></p>
       </div>
     </div>
     <div class="reservate">
       <div>
         <div class="image-reservate">
+
           <%= cl_image_tag(@vehicule.user.avatar.key, class: "card-vehicule-user avatar-bordered") %>
         </div>
         <p><%= @vehicule.price %>€/ jour</p>
@@ -34,7 +35,11 @@
       <div class="btn btn-info">
 
           <%# if @reservation.status == false || @reservation.status.nil? %>
-          <%= link_to 'Reservation', new_vehicule_reservation_path(@vehicule) %>
+
+          <%= link_to 'reservation', new_vehicule_reservation_path(@vehicule) %>
+        <% else %>
+          <%= "booked" %>
+        <% end %>
 
         <%= link_to user_messages_path(@vehicule.user) do %>
           <button class="btn btn-info">Contacter le propriétaire</button>
